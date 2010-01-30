@@ -85,5 +85,13 @@ Add GitHub as a remote repository for your project and push your local project t
 git remote add origin git@github.com:YOUR_GITHUB_ACCOUNT/YOUR_PROJECT_NAME.git
 git push origin master
 
+At each stage of completion, you should check your code into your local repository:
+
+git commit -a -m "some helpful comment" 
+
+and then push it to the remote repository:
+
+
+
 
 
