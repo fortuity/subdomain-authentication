@@ -91,6 +91,8 @@ git commit -a -m "some helpful comment"
 
 and then push it to the remote repository:
 
+git push origin master
+
 
 
 
