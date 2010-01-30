@@ -140,6 +140,27 @@ sudo gem install friendly_id
 
 Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
+Specify the Required Gems
 
+Modify the environment.rb file to specify the required gems:
+
+# Specifies gem version of Rails to use when vendor/rails is not present
+RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
+
+# Bootstrap the Rails environment, frameworks, and default configuration
+require File.join(File.dirname(__FILE__), 'boot')
+
+Rails::Initializer.run do |config|
+	config.gem 'haml', :lib => 'haml', :version => '>=2.2.17'
+	config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.12'
+	config.gem 'formtastic', :source => 'http://gemcutter.org/', :version => '>= 0.9.7'
+	config.gem 'devise', :source => 'http://gemcutter.org/', :version => '>= 0.9.1'
+	config.gem 'warden', :source => 'http://gemcutter.org/', :version => '>= 0.9.0'
+	config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/",:version => '>= 1.0.2'
+	config.gem "subdomain_routes", :source => "http://gemcutter.org", :version => '>= 0.3.1'
+	config.gem 'friendly_id', :version => '>= 2.2.7'
+		
+	config.time_zone = 'UTC'
+end
 
 
