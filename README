@@ -93,6 +93,52 @@ and then push it to the remote repository:
 
 git push origin master
 
+Required Gems
+
+The application uses the following gems:
+
+haml (version 2.2.17)
+will_paginate (version 2.3.12)
+formtastic (version 0.9.7)
+devise (version 0.9.1)
+warden (version 0.9.0)
+inherited_resources (version 1.0.2)
+subdomain_routes (version 0.3.1))
+friendly_id (version 2.2.7)
+
+Install Gems
+
+You can check which gems are installed on your computer with:
+
+gem list --local
+
+If any gems need updating, you can update all with 
+
+sudo gem update
+
+or individually, as in this example:
+
+sudo gem update haml
+sudo gem update will_paginate
+sudo gem update formtastic
+sudo gem update devise
+sudo gem update warden
+sudo gem update inherited_resources
+sudo gem update subdomain_routes
+sudo gem update friendly_id
+
+If they are not already installed, install the required gems on your computer:
+
+sudo gem install haml
+sudo gem install will_paginate
+sudo gem install formtastic
+sudo gem install devise
+sudo gem install warden
+sudo gem install inherited_resources
+sudo gem install subdomain_routes
+sudo gem install friendly_id
+
+Keep in mind that you have installed these gems locally. When you deploy the app to another server, the same gems (and versions) must be available.
 
 
 
