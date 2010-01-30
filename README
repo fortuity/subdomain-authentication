@@ -51,10 +51,6 @@ Check that git is installed on your computer:
 
 git version
 
-Check that your GitHub account is set up properly:
-
-ssh git@github.com
-
 Create a top, project-level .gitignore file containing:
 
 .DS_Store
@@ -69,3 +65,25 @@ Initialize git and check in your first commit:
 git init
 git add .
 git commit -m 'initial commit'
+
+You can check your commit status at any time with:
+
+git status
+
+At this point you can check your local project into a remote source control repository. We'll assume you are using git with an account at GitHub.
+
+Check that your GitHub account is set up properly:
+
+ssh git@github.com
+
+Go to GitHub and create a new empty repository into which you can push your local git repo:
+
+http://github.com/repositories/new
+
+Add GitHub as a remote repository for your project and push your local project to the remote repository:
+
+git remote add origin git@github.com:YOUR_GITHUB_ACCOUNT/YOUR_PROJECT_NAME.git
+git push origin master
+
+
+
