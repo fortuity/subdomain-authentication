@@ -234,6 +234,12 @@ app/views/layouts/application.html.haml
 
 This will be the default layout for every page in the application.
 
+Add a layout helper file:
+
+app/helpers/layout_helper.rb
+
+This provides some simple helper methods for page title and stylesheet includes.
+
 Create a Home Page
 
 Create the first page of the application. Use the Rails generate command to create a "home" controller and a "views/home/index" page.
