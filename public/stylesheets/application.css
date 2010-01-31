@@ -1,0 +1,1090 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000; }
+  a:visited {
+    color: #666; }
+  a:hover {
+    color: #fff;
+    background-color: #000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+  #errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #c00;
+    color: #fff; }
+  #errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px; }
+  #errorExplanation ul li {
+    font-size: 12px;
+    list-style: square; }
+
+form li {
+  padding: 10px 0px; }
+  form li li {
+    padding: 0; }
+form fieldset {
+  background: #eee;
+  margin-top: 20px; }
+form li fieldset {
+  padding: 0; }
+form legend, form label {
+  color: #333; }
+form label, form .label {
+  padding-bottom: 5px; }
+  form label abbr, form .label abbr {
+    color: #f00; }
+form label {
+  line-height: 1.4em;
+  font-size: 13px; }
+form legend span {
+  font-size: 1.4em;
+  line-height: 1em; }
+  form legend span.label {
+    font-size: 1em; }
+form select {
+  padding: 3px; }
+form input, form textarea, form select {
+  font-family: inherit;
+  font-size: 14px; }
+form textarea, form input {
+  border: 1px solid #999;
+  padding: 6px 8px;
+  line-height: 100%; }
+form .date li, form .time li, form .datetime li {
+  margin: 0 0.3em 0 0; }
+form #errorExplanation li {
+  margin-left: 15px; }
+form form p, form .errors {
+  padding: 3px 0px; }
+form .required input, form .required textarea, form .required select {
+  background-color: #fff; }
+form .error input, form .error textarea, form .error select {
+  background-color: #fcc;
+  border: 1px solid #f66; }
+form .optional input, form .optional textarea, form .optional select {
+  background-color: #fff; }
+form .errors {
+  color: #a00; }
+  form .errors li {
+    margin-left: 1.2em; }
+form p.inline-errors {
+  color: #f00; }
+form p.inline-hints {
+  color: #777; }
+form .buttons {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px; }
+  form .buttons li {
+    padding-right: 0.5em; }
+  form .buttons input {
+    border: 1px solid #999; }
+
+body {
+  background: #ccc; }
+
+#container {
+  width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+  background: #fff;
+  position: relative; }
+
+#styles {
+  background-color: #f8f5cd;
+  border: 1px solid #d0cda5;
+  margin-bottom: 12px; }
+
+#style-switcher, #input-switcher, #button-switcher {
+  margin: 0;
+  padding: 4px 0px 4px 12px;
+  border-bottom: 1px solid #d0cda5; }
+  #style-switcher strong, #input-switcher strong, #button-switcher strong {
+    width: 200px;
+    display: block;
+    float: left;
+    font-weight: normal; }
+  #style-switcher a:link, #style-switcher a:active, #style-switcher a:focus, #style-switcher a:visited, #input-switcher a:link, #input-switcher a:active, #input-switcher a:focus, #input-switcher a:visited, #button-switcher a:link, #button-switcher a:active, #button-switcher a:focus, #button-switcher a:visited {
+    color: #00f; }
+  #style-switcher a:hover, #input-switcher a:hover, #button-switcher a:hover {
+    color: #000;
+    background: transparent; }
+  #style-switcher a.active, #input-switcher a.active, #button-switcher a.active {
+    color: #888;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: default; }
+
+form li label, form li legend span.label {
+  font-weight: bold; }
+form li li label {
+  font-weight: normal; }
+
+.stack ul, .stack ol, .stack legend, .stack p {
+  margin: 0;
+  padding: 0; }
+.stack li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+.stack fieldset {
+  display: block;
+  *display: inline-block; }
+  .stack fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.stack abbr, .stack acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+.stack ol, .stack ul {
+  list-style: none; }
+.stack label {
+  display: block;
+  *display: inline-block; }
+  .stack label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.stack input, .stack textarea {
+  vertical-align: middle; }
+.stack .check_boxes input, .stack .radio input {
+  margin: 0; }
+.stack .check_boxes label, .stack .radio label {
+  cursor: pointer; }
+.stack .hidden {
+  display: none; }
+.stack .date li, .stack .time li, .stack .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+.stack .date label, .stack .time label, .stack .datetime label {
+  display: none;
+  width: auto; }
+.stack .date input, .stack .time input, .stack .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+.stack .errors {
+  list-style: square; }
+  .stack .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+.stack .inputs {
+  z-index: 99; }
+.stack .buttons li {
+  float: left; }
+.stack li {
+  *display: inline-block;
+  display: block; }
+  .stack li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .stack li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  .stack li legend {
+    display: block;
+    margin-bottom: 0; }
+  .stack li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  .stack li ol {
+    float: left;
+    margin: 0; }
+    .stack li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+.stack fieldset {
+  width: 100%; }
+.stack ol {
+  padding-left: 3%; }
+.stack input {
+  clear: both;
+  float: none; }
+.stack li {
+  display: block;
+  clear: both;
+  float: none;
+  width: 100%; }
+  .stack li ol {
+    padding: 0; }
+  .stack li li {
+    clear: none;
+    width: auto; }
+  .stack li fieldset legend, .stack li fieldset legend .label {
+    display: block;
+    clear: both; }
+  .stack li fieldset .label {
+    position: relative; }
+  .stack li fieldset label, .stack li fieldset input {
+    width: auto; }
+.stack .date ol, .stack .time ol, .stack .datetime ol {
+  width: 100%; }
+.stack .date li, .stack .time li, .stack .datetime li {
+  display: inline;
+  clear: none;
+  float: left;
+  padding-right: 1.5%; }
+.stack .checkbox li, .stack .radio li {
+  display: block; }
+.stack .checkbox input, .stack .radio input {
+  border: none; }
+.stack label {
+  display: block;
+  clear: both;
+  float: none;
+  width: 92%; }
+.stack input, .stack textarea {
+  width: 92%; }
+.stack select {
+  width: auto; }
+.stack .errors li {
+  display: list-item; }
+.stack .buttons ol {
+  padding-left: 3%;
+  padding-right: 3%; }
+.stack .buttons li {
+  float: left;
+  width: auto;
+  clear: none;
+  display: inline; }
+.stack .buttons input {
+  width: auto; }
+.stack #errorExplanation {
+  width: 97%; }
+.stack .label {
+  #left: -0.5em;
+  #position: relative; }
+.stack.buttons-right ul, .stack.buttons-right ol, .stack.buttons-right legend, .stack.buttons-right p {
+  margin: 0;
+  padding: 0; }
+.stack.buttons-right li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+.stack.buttons-right fieldset {
+  display: block;
+  *display: inline-block; }
+  .stack.buttons-right fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.stack.buttons-right abbr, .stack.buttons-right acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+.stack.buttons-right ol, .stack.buttons-right ul {
+  list-style: none; }
+.stack.buttons-right label {
+  display: block;
+  *display: inline-block; }
+  .stack.buttons-right label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.stack.buttons-right input, .stack.buttons-right textarea {
+  vertical-align: middle; }
+.stack.buttons-right .check_boxes input, .stack.buttons-right .radio input {
+  margin: 0; }
+.stack.buttons-right .check_boxes label, .stack.buttons-right .radio label {
+  cursor: pointer; }
+.stack.buttons-right .hidden {
+  display: none; }
+.stack.buttons-right .date li, .stack.buttons-right .time li, .stack.buttons-right .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+.stack.buttons-right .date label, .stack.buttons-right .time label, .stack.buttons-right .datetime label {
+  display: none;
+  width: auto; }
+.stack.buttons-right .date input, .stack.buttons-right .time input, .stack.buttons-right .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+.stack.buttons-right .errors {
+  list-style: square; }
+  .stack.buttons-right .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+.stack.buttons-right .inputs {
+  z-index: 99; }
+.stack.buttons-right .buttons li {
+  float: left; }
+.stack.buttons-right li {
+  *display: inline-block;
+  display: block; }
+  .stack.buttons-right li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .stack.buttons-right li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  .stack.buttons-right li legend {
+    display: block;
+    margin-bottom: 0; }
+  .stack.buttons-right li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  .stack.buttons-right li ol {
+    float: left;
+    margin: 0; }
+    .stack.buttons-right li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+.stack.buttons-right fieldset {
+  width: 100%; }
+.stack.buttons-right ol {
+  padding-left: 3%; }
+.stack.buttons-right input {
+  clear: both;
+  float: none; }
+.stack.buttons-right li {
+  display: block;
+  clear: both;
+  float: none;
+  width: 100%; }
+  .stack.buttons-right li ol {
+    padding: 0; }
+  .stack.buttons-right li li {
+    clear: none;
+    width: auto; }
+  .stack.buttons-right li fieldset legend, .stack.buttons-right li fieldset legend .label {
+    display: block;
+    clear: both; }
+  .stack.buttons-right li fieldset .label {
+    position: relative; }
+  .stack.buttons-right li fieldset label, .stack.buttons-right li fieldset input {
+    width: auto; }
+.stack.buttons-right .date ol, .stack.buttons-right .time ol, .stack.buttons-right .datetime ol {
+  width: 100%; }
+.stack.buttons-right .date li, .stack.buttons-right .time li, .stack.buttons-right .datetime li {
+  display: inline;
+  clear: none;
+  float: left;
+  padding-right: 1.5%; }
+.stack.buttons-right .checkbox li, .stack.buttons-right .radio li {
+  display: block; }
+.stack.buttons-right .checkbox input, .stack.buttons-right .radio input {
+  border: none; }
+.stack.buttons-right label {
+  display: block;
+  clear: both;
+  float: none;
+  width: 92%; }
+.stack.buttons-right input, .stack.buttons-right textarea {
+  width: 92%; }
+.stack.buttons-right select {
+  width: auto; }
+.stack.buttons-right .errors li {
+  display: list-item; }
+.stack.buttons-right .buttons ol {
+  padding-left: 3%;
+  padding-right: 3%; }
+.stack.buttons-right .buttons li {
+  float: right;
+  width: auto;
+  clear: none;
+  display: inline; }
+.stack.buttons-right .buttons input {
+  width: auto; }
+.stack.buttons-right #errorExplanation {
+  width: 97%; }
+.stack.buttons-right .label {
+  #left: -0.5em;
+  #position: relative; }
+
+.float-left ul, .float-left ol, .float-left legend, .float-left p {
+  margin: 0;
+  padding: 0; }
+.float-left li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+.float-left fieldset {
+  display: block;
+  *display: inline-block; }
+  .float-left fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-left abbr, .float-left acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+.float-left ol, .float-left ul {
+  list-style: none; }
+.float-left label {
+  display: block;
+  *display: inline-block; }
+  .float-left label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-left input, .float-left textarea {
+  vertical-align: middle; }
+.float-left .check_boxes input, .float-left .radio input {
+  margin: 0; }
+.float-left .check_boxes label, .float-left .radio label {
+  cursor: pointer; }
+.float-left .hidden {
+  display: none; }
+.float-left .date li, .float-left .time li, .float-left .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+.float-left .date label, .float-left .time label, .float-left .datetime label {
+  display: none;
+  width: auto; }
+.float-left .date input, .float-left .time input, .float-left .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+.float-left .errors {
+  list-style: square; }
+  .float-left .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+.float-left .inputs {
+  z-index: 99; }
+.float-left .buttons li {
+  float: left; }
+.float-left li {
+  *display: inline-block;
+  display: block; }
+  .float-left li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .float-left li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  .float-left li legend {
+    display: block;
+    margin-bottom: 0; }
+  .float-left li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  .float-left li ol {
+    float: left;
+    margin: 0; }
+    .float-left li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+.float-left fieldset {
+  width: 100%; }
+.float-left label {
+  float: left;
+  width: 18%;
+  text-align: left;
+  padding-left: 2%; }
+.float-left li ol {
+  padding: 0 8% 0 20%; }
+.float-left li fieldset legend, .float-left li fieldset legend .label {
+  display: block; }
+.float-left li fieldset legend {
+  width: 18%;
+  text-align: left;
+  display: inline;
+  float: left;
+  clear: none;
+  padding-left: 2%;
+  width: 98%; }
+.float-left li fieldset .label {
+  position: absolute;
+  width: 18%;
+  top: 0px;
+  left: 2%; }
+.float-left li fieldset label {
+  padding-left: 0; }
+.float-left li fieldset label, .float-left li fieldset input {
+  width: auto;
+  display: inline;
+  clear: none;
+  text-align: left; }
+.float-left li fieldset select {
+  padding: 0;
+  clear: both;
+  display: block; }
+.float-left .inline-hints, .float-left .inline-errors, .float-left .errors {
+  margin: 0 0 0 20%; }
+.float-left input, .float-left textarea {
+  width: 72%; }
+.float-left select {
+  width: auto; }
+.float-left .checkbox li, .float-left .radio li {
+  display: block;
+  clear: both; }
+.float-left .checkbox input, .float-left .radio input {
+  border: none; }
+.float-left .buttons {
+  padding-left: 20%;
+  width: 80%; }
+  .float-left .buttons input {
+    width: auto; }
+  .float-left .buttons li {
+    width: auto;
+    float: left;
+    display: inline; }
+.float-left #errorExplanation {
+  margin-left: 20%;
+  width: 72%; }
+.float-left.buttons-right ul, .float-left.buttons-right ol, .float-left.buttons-right legend, .float-left.buttons-right p {
+  margin: 0;
+  padding: 0; }
+.float-left.buttons-right li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+.float-left.buttons-right fieldset {
+  display: block;
+  *display: inline-block; }
+  .float-left.buttons-right fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-left.buttons-right abbr, .float-left.buttons-right acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+.float-left.buttons-right ol, .float-left.buttons-right ul {
+  list-style: none; }
+.float-left.buttons-right label {
+  display: block;
+  *display: inline-block; }
+  .float-left.buttons-right label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-left.buttons-right input, .float-left.buttons-right textarea {
+  vertical-align: middle; }
+.float-left.buttons-right .check_boxes input, .float-left.buttons-right .radio input {
+  margin: 0; }
+.float-left.buttons-right .check_boxes label, .float-left.buttons-right .radio label {
+  cursor: pointer; }
+.float-left.buttons-right .hidden {
+  display: none; }
+.float-left.buttons-right .date li, .float-left.buttons-right .time li, .float-left.buttons-right .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+.float-left.buttons-right .date label, .float-left.buttons-right .time label, .float-left.buttons-right .datetime label {
+  display: none;
+  width: auto; }
+.float-left.buttons-right .date input, .float-left.buttons-right .time input, .float-left.buttons-right .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+.float-left.buttons-right .errors {
+  list-style: square; }
+  .float-left.buttons-right .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+.float-left.buttons-right .inputs {
+  z-index: 99; }
+.float-left.buttons-right .buttons li {
+  float: left; }
+.float-left.buttons-right li {
+  *display: inline-block;
+  display: block; }
+  .float-left.buttons-right li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .float-left.buttons-right li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  .float-left.buttons-right li legend {
+    display: block;
+    margin-bottom: 0; }
+  .float-left.buttons-right li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  .float-left.buttons-right li ol {
+    float: left;
+    margin: 0; }
+    .float-left.buttons-right li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+.float-left.buttons-right fieldset {
+  width: 100%; }
+.float-left.buttons-right label {
+  float: left;
+  width: 18%;
+  text-align: left;
+  padding-left: 2%; }
+.float-left.buttons-right li ol {
+  padding: 0 8% 0 20%; }
+.float-left.buttons-right li fieldset legend, .float-left.buttons-right li fieldset legend .label {
+  display: block; }
+.float-left.buttons-right li fieldset legend {
+  width: 18%;
+  text-align: left;
+  display: inline;
+  float: left;
+  clear: none;
+  padding-left: 2%;
+  width: 98%; }
+.float-left.buttons-right li fieldset .label {
+  position: absolute;
+  width: 18%;
+  top: 0px;
+  left: 2%; }
+.float-left.buttons-right li fieldset label {
+  padding-left: 0; }
+.float-left.buttons-right li fieldset label, .float-left.buttons-right li fieldset input {
+  width: auto;
+  display: inline;
+  clear: none;
+  text-align: left; }
+.float-left.buttons-right li fieldset select {
+  padding: 0;
+  clear: both;
+  display: block; }
+.float-left.buttons-right .inline-hints, .float-left.buttons-right .inline-errors, .float-left.buttons-right .errors {
+  margin: 0 0 0 20%; }
+.float-left.buttons-right input, .float-left.buttons-right textarea {
+  width: 72%; }
+.float-left.buttons-right select {
+  width: auto; }
+.float-left.buttons-right .checkbox li, .float-left.buttons-right .radio li {
+  display: block;
+  clear: both; }
+.float-left.buttons-right .checkbox input, .float-left.buttons-right .radio input {
+  border: none; }
+.float-left.buttons-right .buttons {
+  padding-left: 20%;
+  width: 80%; }
+  .float-left.buttons-right .buttons input {
+    width: auto; }
+  .float-left.buttons-right .buttons ol {
+    padding-right: 2%; }
+  .float-left.buttons-right .buttons li {
+    width: auto;
+    float: right;
+    display: inline; }
+.float-left.buttons-right #errorExplanation {
+  margin-left: 20%;
+  width: 72%; }
+
+.float-right ul, .float-right ol, .float-right legend, .float-right p {
+  margin: 0;
+  padding: 0; }
+.float-right li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+.float-right fieldset {
+  display: block;
+  *display: inline-block; }
+  .float-right fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-right abbr, .float-right acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+.float-right ol, .float-right ul {
+  list-style: none; }
+.float-right label {
+  display: block;
+  *display: inline-block; }
+  .float-right label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-right input, .float-right textarea {
+  vertical-align: middle; }
+.float-right .check_boxes input, .float-right .radio input {
+  margin: 0; }
+.float-right .check_boxes label, .float-right .radio label {
+  cursor: pointer; }
+.float-right .hidden {
+  display: none; }
+.float-right .date li, .float-right .time li, .float-right .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+.float-right .date label, .float-right .time label, .float-right .datetime label {
+  display: none;
+  width: auto; }
+.float-right .date input, .float-right .time input, .float-right .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+.float-right .errors {
+  list-style: square; }
+  .float-right .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+.float-right .inputs {
+  z-index: 99; }
+.float-right .buttons li {
+  float: left; }
+.float-right li {
+  *display: inline-block;
+  display: block; }
+  .float-right li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .float-right li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  .float-right li legend {
+    display: block;
+    margin-bottom: 0; }
+  .float-right li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  .float-right li ol {
+    float: left;
+    margin: 0; }
+    .float-right li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+.float-right fieldset {
+  width: 100%; }
+.float-right label {
+  float: left;
+  width: 18%;
+  text-align: right;
+  padding-right: 2%; }
+.float-right li ol {
+  padding: 0 8% 0 20%; }
+.float-right li fieldset legend, .float-right li fieldset legend .label {
+  display: block; }
+.float-right li fieldset legend {
+  width: 18%;
+  text-align: right;
+  display: inline;
+  float: left;
+  clear: none;
+  padding-right: 2%;
+  width: 98%; }
+.float-right li fieldset .label {
+  position: absolute;
+  width: 18%;
+  top: 0px;
+  left: 0; }
+.float-right li fieldset label {
+  padding-left: 0; }
+.float-right li fieldset label, .float-right li fieldset input {
+  width: auto;
+  display: inline;
+  clear: none;
+  text-align: left; }
+.float-right li fieldset select {
+  padding: 0;
+  clear: both;
+  display: block; }
+.float-right .inline-hints, .float-right .inline-errors, .float-right .errors {
+  margin: 0 0 0 20%; }
+.float-right input, .float-right textarea {
+  width: 72%; }
+.float-right select {
+  width: auto; }
+.float-right .checkbox li, .float-right .radio li {
+  display: block;
+  clear: both; }
+.float-right .checkbox input, .float-right .radio input {
+  border: none; }
+.float-right .buttons {
+  padding-left: 20%;
+  width: 80%; }
+  .float-right .buttons input {
+    width: auto; }
+  .float-right .buttons li {
+    width: auto;
+    float: left;
+    display: inline; }
+.float-right #errorExplanation {
+  margin-left: 20%;
+  width: 72%; }
+.float-right.buttons-right ul, .float-right.buttons-right ol, .float-right.buttons-right legend, .float-right.buttons-right p {
+  margin: 0;
+  padding: 0; }
+.float-right.buttons-right li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+.float-right.buttons-right fieldset {
+  display: block;
+  *display: inline-block; }
+  .float-right.buttons-right fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-right.buttons-right abbr, .float-right.buttons-right acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+.float-right.buttons-right ol, .float-right.buttons-right ul {
+  list-style: none; }
+.float-right.buttons-right label {
+  display: block;
+  *display: inline-block; }
+  .float-right.buttons-right label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+.float-right.buttons-right input, .float-right.buttons-right textarea {
+  vertical-align: middle; }
+.float-right.buttons-right .check_boxes input, .float-right.buttons-right .radio input {
+  margin: 0; }
+.float-right.buttons-right .check_boxes label, .float-right.buttons-right .radio label {
+  cursor: pointer; }
+.float-right.buttons-right .hidden {
+  display: none; }
+.float-right.buttons-right .date li, .float-right.buttons-right .time li, .float-right.buttons-right .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+.float-right.buttons-right .date label, .float-right.buttons-right .time label, .float-right.buttons-right .datetime label {
+  display: none;
+  width: auto; }
+.float-right.buttons-right .date input, .float-right.buttons-right .time input, .float-right.buttons-right .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+.float-right.buttons-right .errors {
+  list-style: square; }
+  .float-right.buttons-right .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+.float-right.buttons-right .inputs {
+  z-index: 99; }
+.float-right.buttons-right .buttons li {
+  float: left; }
+.float-right.buttons-right li {
+  *display: inline-block;
+  display: block; }
+  .float-right.buttons-right li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .float-right.buttons-right li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  .float-right.buttons-right li legend {
+    display: block;
+    margin-bottom: 0; }
+  .float-right.buttons-right li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  .float-right.buttons-right li ol {
+    float: left;
+    margin: 0; }
+    .float-right.buttons-right li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+.float-right.buttons-right fieldset {
+  width: 100%; }
+.float-right.buttons-right label {
+  float: left;
+  width: 18%;
+  text-align: right;
+  padding-right: 2%; }
+.float-right.buttons-right li ol {
+  padding: 0 8% 0 20%; }
+.float-right.buttons-right li fieldset legend, .float-right.buttons-right li fieldset legend .label {
+  display: block; }
+.float-right.buttons-right li fieldset legend {
+  width: 18%;
+  text-align: right;
+  display: inline;
+  float: left;
+  clear: none;
+  padding-right: 2%;
+  width: 98%; }
+.float-right.buttons-right li fieldset .label {
+  position: absolute;
+  width: 18%;
+  top: 0px;
+  left: 0; }
+.float-right.buttons-right li fieldset label {
+  padding-left: 0; }
+.float-right.buttons-right li fieldset label, .float-right.buttons-right li fieldset input {
+  width: auto;
+  display: inline;
+  clear: none;
+  text-align: left; }
+.float-right.buttons-right li fieldset select {
+  padding: 0;
+  clear: both;
+  display: block; }
+.float-right.buttons-right .inline-hints, .float-right.buttons-right .inline-errors, .float-right.buttons-right .errors {
+  margin: 0 0 0 20%; }
+.float-right.buttons-right input, .float-right.buttons-right textarea {
+  width: 72%; }
+.float-right.buttons-right select {
+  width: auto; }
+.float-right.buttons-right .checkbox li, .float-right.buttons-right .radio li {
+  display: block;
+  clear: both; }
+.float-right.buttons-right .checkbox input, .float-right.buttons-right .radio input {
+  border: none; }
+.float-right.buttons-right .buttons {
+  padding-left: 20%;
+  width: 80%; }
+  .float-right.buttons-right .buttons input {
+    width: auto; }
+  .float-right.buttons-right .buttons ol {
+    padding-right: 2%; }
+  .float-right.buttons-right .buttons li {
+    width: auto;
+    float: right;
+    display: inline; }
+.float-right.buttons-right #errorExplanation {
+  margin-left: 20%;
+  width: 72%; }
+
+.float-right.input-float .radio ol, .float-right.input-float .check_boxes ol, .float-left.input-float .radio ol, .float-left.input-float .check_boxes ol, .stack.input-float .radio ol, .stack.input-float .check_boxes ol {
+  display: inline;
+  float: left;
+  clear: none; }
+.float-right.input-float .radio li, .float-right.input-float .check_boxes li, .float-left.input-float .radio li, .float-left.input-float .check_boxes li, .stack.input-float .radio li, .stack.input-float .check_boxes li {
+  width: auto;
+  display: inline;
+  float: left;
+  clear: none; }
+.float-right.input-float .radio input, .float-right.input-float .check_boxes input, .float-left.input-float .radio input, .float-left.input-float .check_boxes input, .stack.input-float .radio input, .stack.input-float .check_boxes input {
+  float: none;
+  display: inline; }
+.float-right.input-float .radio label, .float-right.input-float .check_boxes label, .float-left.input-float .radio label, .float-left.input-float .check_boxes label, .stack.input-float .radio label, .stack.input-float .check_boxes label {
+  display: block;
+  clear: none;
+  width: auto;
+  padding-left: 0;
+  line-height: 150%;
+  margin-right: 10px; }
+.float-right.input-grid .radio ol, .float-right.input-grid .check_boxes ol, .float-left.input-grid .radio ol, .float-left.input-grid .check_boxes ol, .stack.input-grid .radio ol, .stack.input-grid .check_boxes ol {
+  display: inline;
+  float: left;
+  clear: none; }
+.float-right.input-grid .radio li, .float-right.input-grid .check_boxes li, .float-left.input-grid .radio li, .float-left.input-grid .check_boxes li, .stack.input-grid .radio li, .stack.input-grid .check_boxes li {
+  display: inline;
+  float: left;
+  clear: none;
+  width: 200px; }
+.float-right.input-grid .radio label, .float-right.input-grid .check_boxes label, .float-left.input-grid .radio label, .float-left.input-grid .check_boxes label, .stack.input-grid .radio label, .stack.input-grid .check_boxes label {
+  display: inline;
+  float: left;
+  clear: none;
+  width: auto;
+  line-height: 150%; }
