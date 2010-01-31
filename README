@@ -178,4 +178,22 @@ inherited_resources --version '>= 1.0.2' --source http://gemcutter.org
 subdomain_routes --version '>= 0.3.1' --source http://gemcutter.org
 friendly_id --version '>= 2.2.7'
 
+Remove the index.html File
+
+You can check that your app runs properly by entering the command
+
+script/server 
+
+To see your application in action, open a browser window and navigate to http://localhost:3000. You should see Rails’ default information page.
+
+Stop the server with Control-C.
+
+You should remove the page public/index.html at this point.
+
+You may also want to modify the file public/robots.txt to prevent indexing by search engines if you have a development version on a publicly accessible server:
+
+# To ban all spiders from the entire site uncomment the next two lines:
+User-Agent: *
+Disallow: /
+
 
