@@ -196,4 +196,34 @@ You may also want to modify the file public/robots.txt to prevent indexing by se
 User-Agent: *
 Disallow: /
 
+Add Stylesheets
+
+You might wait until after you've built your application to begin applying CSS styling to your pages. Or you can do it now and your pages will look more visually appealing during development.
+
+This application uses HAML and its companion SASS to to mark up pages for layout and CSS styling. We also use the formtastic gem in conjunction with a SASS version of formtastic to mark up forms. The SASS version of formtastic is available here: http://github.com/activestylus/formtastic-sass.
+
+Create a directory for the SAS files:
+
+mkdir public/stylesheets/sass
+
+and add SASS stylesheet files for formtastic styling:
+
+http://github.com/activestylus/formtastic-sass/blob/master/_formtastic_base.sass
+http://github.com/activestylus/formtastic-sass/blob/master/_skintastic.sass
+http://github.com/activestylus/test_formtastic_sass/blob/master/public/stylesheets/sass/_scaffold.sass
+
+Create a master application SASS file. Here's one you can use to get started:
+
+http://github.com/activestylus/test_formtastic_sass/blob/master/public/stylesheets/sass/application.sass
+
+Be sure you've imported the formtastic SASS files by adding this at the beginning of the master application SASS file:
+
+@import scaffold.sass
+@import formtastic_base.sass
+@import skintastic.sass
+
+You can refer to http://github.com/activestylus/formtastic-sass for instructions on modifying the styling of forms.
+
+When you launch your web app, HAML will automatically generate an application.css file from the component SASS files.
+
 

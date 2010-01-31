@@ -1,0 +1,67 @@
+!tan = #f8f5cd
+!tanner = !tan - 40
+
+@import scaffold.sass
+@import formtastic_base.sass
+@import skintastic.sass
+
+body
+  :background #ccc
+
+#container
+  :width 800px
+  :padding 20px
+  :margin 0 auto
+  :background #fff
+  :position relative
+
+#styles
+  :background-color = !tan
+  :border = 1px "solid" !tanner
+  :margin-bottom 12px
+  
+#style-switcher, #input-switcher, #button-switcher
+  :margin 0
+  :padding 4px 0px 4px 12px
+  :border-bottom = 1px "solid" !tanner
+  strong
+    :width 200px
+    :display block
+    :float left
+    :font-weight normal
+  a
+    &:link, &:active, &:focus, &:visited
+      :color #00f
+    &:hover
+      :color #000
+      :background transparent
+    &.active
+      :color #888
+      :font-weight bold
+      :text-decoration none
+      :cursor default
+
+form
+  +bold-labels
+.stack
+  +stack-form(100%,92%,3%)
+  &.buttons-right
+    +stack-form(100%,92%,3%,"buttons-right")
+
+.float-left
+  +float-form-left(100%,20%,72%,2%)
+  &.buttons-right
+    +float-form-left(100%,20%,72%,2%,"buttons-right")
+
+.float-right
+  +float-form-right(100%,20%,72%,2%)
+  &.buttons-right
+    +float-form-right(100%,20%,72%,2%,"buttons-right")
+
+.float-right, .float-left, .stack
+  &.input-float
+    +float-inputs
+  &.input-grid
+    +grid-inputs(200px)
+
+
