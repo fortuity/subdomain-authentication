@@ -226,4 +226,14 @@ You can refer to http://github.com/activestylus/formtastic-sass for instructions
 
 When you launch your web app, HAML will automatically generate an application.css file from the component SASS files.
 
+Enable Haml
+
+To enable Haml for the application, run:
+
+haml --rails .
+
+(Be sure to include the trailing dot to specify the path to the current directory.)
+
+This will create a Haml plugin in "vendor/plugins". After Haml is initialized, all view files with the ".html.haml" extension will be compiled using Haml.
+
 
