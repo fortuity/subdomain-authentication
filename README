@@ -178,23 +178,13 @@ inherited_resources --version '>= 1.0.2' --source http://gemcutter.org
 subdomain_routes --version '>= 0.3.1' --source http://gemcutter.org
 friendly_id --version '>= 2.2.7'
 
-Remove the index.html File
-
 You can check that your app runs properly by entering the command
 
 script/server 
 
-To see your application in action, open a browser window and navigate to http://localhost:3000. You should see Rails’ default information page.
+To see your application in action, open a browser window and navigate to http://localhost:3000. You should see the Rails default information page.
 
 Stop the server with Control-C.
-
-You should remove the page public/index.html at this point.
-
-You may also want to modify the file public/robots.txt to prevent indexing by search engines if you have a development version on a publicly accessible server:
-
-# To ban all spiders from the entire site uncomment the next two lines:
-User-Agent: *
-Disallow: /
 
 Add Stylesheets
 
@@ -202,7 +192,7 @@ You might wait until after you've built your application to begin applying CSS s
 
 This application uses HAML and its companion SASS to to mark up pages for layout and CSS styling. We also use the formtastic gem in conjunction with a SASS version of formtastic to mark up forms. The SASS version of formtastic is available here: http://github.com/activestylus/formtastic-sass.
 
-Create a directory for the SAS files:
+Create a directory for the SASS files:
 
 mkdir public/stylesheets/sass
 
@@ -235,5 +225,54 @@ haml --rails .
 (Be sure to include the trailing dot to specify the path to the current directory.)
 
 This will create a Haml plugin in "vendor/plugins". After Haml is initialized, all view files with the ".html.haml" extension will be compiled using Haml.
+
+Create an Application Layout
+
+Create a application layout default view:
+
+app/views/layouts/application.html.haml
+
+This will be the default layout for every page in the application.
+
+Create a Home Page
+
+Create the first page of the application. Use the Rails generate command to create a "home" controller and a "views/home/index" page.
+
+script/generate controller home index
+
+There's no option in Rails 2.3.4 to generate Haml instead of erb view files, so you will have to delete:
+
+app/views/home/index.html.erb
+
+and add:
+
+app/views/home/index.html.haml
+
+containing only: 
+
+- title 'Subdomain-Authentication'
+
+Now, you have to set a route to your home page. Edit the file config/routes.rb and add:
+
+map.root :controller => "home"
+
+Remove the index.html File
+
+Delete the default page from your application:
+
+$ rm public/index.html
+
+While you are here, you may also want to modify the file public/robots.txt to prevent indexing by search engines if you plan to have a development version on a publicly accessible server:
+
+# To ban all spiders from the entire site uncomment the next two lines:
+User-Agent: *
+Disallow: /
+
+You can check that your app runs properly by entering the command
+
+script/server 
+
+Open a browser window and navigate to http://localhost:3000. You should see the new home page. Stop the server with Control-C.
+
 
 
