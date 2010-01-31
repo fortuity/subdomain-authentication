@@ -163,4 +163,19 @@ Rails::Initializer.run do |config|
 	config.time_zone = 'UTC'
 end
 
+Create a Gems Manifest for Heroku
+
+If you're going to be deploying your app to the Heroku hosted platform, this is an opportune time to create a gems manifest for Heroku. If you do not intend to deploy to Heroku, you can skip this step.
+
+Create a top, project-level .gems file containing:
+
+haml --version '>= 2.2.17'
+will_paginate --version '>= 2.3.12' --source http://gemcutter.org
+formtastic --version '>= 0.9.7' --source http://gemcutter.org
+devise --version '>= 0.9.1' --source http://gemcutter.org
+warden --version '>= 0.9.0' --source http://gemcutter.org
+inherited_resources --version '>= 1.0.2' --source http://gemcutter.org
+subdomain_routes --version '>= 0.3.1' --source http://gemcutter.org
+friendly_id --version '>= 2.2.7'
+
 
