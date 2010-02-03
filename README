@@ -280,5 +280,51 @@ script/server
 
 Open a browser window and navigate to http://localhost:3000. You should see the new home page. Stop the server with Control-C.
 
+Set Up Authentication
+
+This app uses Devise for user management and authentication. Devise is at http://github.com/plataformatec/devise.
+
+We've already installed the Devise gem. Run the generator:
+
+script/generate devise_install
+
+which installs a configuration file:
+
+config/initializers/devise.rb
+
+and a localization file.
+
+Set up action_mailer in your development environment in the file
+
+config/environments/development.rb
+
+by changing:
+
+# Don't care if the mailer can't send
+# config.action_mailer.raise_delivery_errors = false
+
+and adding:
+
+### ActionMailer Config
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+# A dummy setup for development - no deliveries, but logged
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_charset = "utf-8"
+
+Set up action_mailer in your production environment in the file
+
+config/environments/production.rb
+
+by adding:
+
+config.action_mailer.default_url_options = { :host => 'yourhost.com' }
+### ActionMailer Config
+# Setup for production - deliveries, no errors raised
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.default_charset = "utf-8"
 
 
