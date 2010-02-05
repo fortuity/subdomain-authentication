@@ -399,6 +399,54 @@ rake db:migrate
 
 You can take a look at the database schema that's been created for you:
 
-db/schema.rb 
+db/schema.rb
+
+Configure subdomain_routes
+
+Create a configuration file for the subdomain_routes gem:
+
+config/initializers/subdomain_routes.rb
+
+The following configuration is suitable if you are developing the app to run at "localhost" and deploying to a domain such as "example.com". See the information at http://github.com/mholling/subdomain_routes/ if your development or deployment is different.
+
+if Rails.env.to_sym == :development
+  require 'subdomain_routes'
+  	# make sure subdomain_routes can handle a nil subdomain:
+		# http://code.matthewhollingworth.net/articles/2009-06-02-adding-subdomains-to-rails-routing
+  	SubdomainRoutes::Config.domain_length = 1
+end
+if Rails.env.to_sym == :production
+  require 'subdomain_routes'
+  	# make sure subdomain_routes can handle a nil subdomain:
+		# http://code.matthewhollingworth.net/articles/2009-06-02-adding-subdomains-to-rails-routing
+  	SubdomainRoutes::Config.domain_length = 2
+end
+
+Routing
+
+Routing is at the core of this complex aapplication and it is managed by the subdomain_routes gem.
+
+You can find more information about the subdomain_routes gem at http://github.com/mholling/subdomain_routes/.
+
+This application implements three different sets of routes. First, visitors to the main application (without a subdomain) can register as users and create subdomains. Second, administrators can visit the "admin" subdomain and view an administrative home page. Third, anyone can visit a registered subdomain and see a "site" home page.
+
+Add the following routes to implement this use case:
+
+map.subdomain nil do |main|
+	main.root :controller => "home"
+	main.resources :users do |users|
+		users.resources :subdomains, :except => [:edit, :show] 
+	end
+end
+
+map.subdomain :admin do |admin|
+	admin.root :controller => "home"
+	admin.resources :admins
+end
+
+map.subdomain :model => :site do |site|
+	site.root :controller => "sites", :action => "show"
+	site.resources :sites, :only => [:index, :show] 
+end
 
 
