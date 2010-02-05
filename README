@@ -327,4 +327,14 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default_charset = "utf-8"
 
+Generate Models, Migrations, and Routes for Users and Admins
+
+This app manages users and administrators separately, allowing the two roles to be implemented differently.
+
+Use Devise to generate models, migrations, and routes for a User and Admin:
+
+script/generate devise User
+script/generate devise Admin
+
+Modify each migration to add a "name" field to the data table.
 
