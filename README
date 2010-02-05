@@ -363,6 +363,21 @@ class Subdomain < ActiveRecord::Base
   end
 end
 
+Modify the User Model to Have Subdomains
+
+Subdomains belong to users, so we have to set up the User side of the relationship. We'll also modify the User model so the URL for accessing a user uses a name instead of a number:
+
+class User < ActiveRecord::Base
+  has_many :subdomains, :dependent => :destroy
+  has_friendly_id :name
+  # Include default devise modules.
+  # Others available are :lockable, :timeoutable and :activatable.
+  devise :authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation
+end
+
 Create a Site Model
 
 We'll create a Site model as a subclass of the Subdomain model so that each user can view a site at their subdomain. The Site is a simple stub in this application. It can be customized for additional functionality (for example, implementation as a blog).
