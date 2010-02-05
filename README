@@ -345,3 +345,18 @@ script/generate devise Admin
 
 Modify each migration to add a "name" field to the data table.
 
+Create a Database and Run Migrations
+
+Now create an empty database. You can do this by running a rake command:
+
+rake db:create
+
+Run the migrations:
+
+rake db:migrate
+
+You can take a look at the database schema that's been created for you:
+
+db/schema.rb 
+
+
