@@ -347,7 +347,9 @@ Modify each migration to add a "name" field to the data table.
 
 Create Model and Migration for Subdomains
 
-Generate a model and migration for Subdomains. Since a Subdomain will belong to a user, the "user:references" parameter adds a field "user_id" to handle the relationship with a User:
+Each user will be able to register and use a subdomain.
+
+Generate a model and migration for Subdomains. Since a Subdomain will belong to a user, the "user:references" parameter adds a field "user_id" to the data table to handle the relationship with a User:
 
 script/generate model Subdomain name:string user:references
 
@@ -359,6 +361,15 @@ class Subdomain < ActiveRecord::Base
 	def to_param
 		name
   end
+end
+
+Create a Site Model
+
+We'll create a Site model as a subclass of the Subdomain model so that each user can view a site at their subdomain. The Site is a simple stub in this application. It can be customized for additional functionality (for example, implementation as a blog).
+
+The Site model is very simple so there's no need to use a generator:
+
+class Site < Subdomain
 end
 
 Create a Database and Run Migrations
