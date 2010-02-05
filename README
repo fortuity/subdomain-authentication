@@ -280,7 +280,7 @@ script/server
 
 Open a browser window and navigate to http://localhost:3000. You should see the new home page. Stop the server with Control-C.
 
-Set Up Authentication
+Set Up Configuration for Devise
 
 This app uses Devise for user management and authentication. Devise is at http://github.com/plataformatec/devise.
 
