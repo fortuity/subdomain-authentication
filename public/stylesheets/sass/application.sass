@@ -1,67 +1,71 @@
-!tan = #f8f5cd
-!tanner = !tan - 40
-
 @import scaffold.sass
 @import formtastic_base.sass
 @import skintastic.sass
 
+!primary_color = #4B7399
+
 body
-  :background #ccc
+  :background-color = !primary_color
+  :font
+    :family Verdana, Helvetica, Arial
+    :size 14px
+
+a
+  :color #0000FF
+  img
+    :border none
+
+.clear
+  :clear both
+  :height 0
+  :overflow hidden
 
 #container
-  :width 800px
-  :padding 20px
+  :width 75%
   :margin 0 auto
   :background #fff
-  :position relative
+  :padding 20px 40px
+  :border solid 1px black
+  :margin-top 20px
 
-#styles
-  :background-color = !tan
-  :border = 1px "solid" !tanner
-  :margin-bottom 12px
-  
-#style-switcher, #input-switcher, #button-switcher
-  :margin 0
-  :padding 4px 0px 4px 12px
-  :border-bottom = 1px "solid" !tanner
-  strong
-    :width 200px
-    :display block
-    :float left
-    :font-weight normal
-  a
-    &:link, &:active, &:focus, &:visited
-      :color #00f
-    &:hover
-      :color #000
-      :background transparent
-    &.active
-      :color #888
-      :font-weight bold
-      :text-decoration none
-      :cursor default
+#flash_notice,
+#flash_error
+  :padding 5px 8px
+  :margin 10px 0
 
-form
-  +bold-labels
-.stack
-  +stack-form(100%,92%,3%)
-  &.buttons-right
-    +stack-form(100%,92%,3%,"buttons-right")
+#flash_notice
+  :background-color #CFC
+  :border solid 1px #6C6
 
-.float-left
-  +float-form-left(100%,20%,72%,2%)
-  &.buttons-right
-    +float-form-left(100%,20%,72%,2%,"buttons-right")
+#flash_error
+  :background-color #FCC
+  :border solid 1px #C66
 
-.float-right
-  +float-form-right(100%,20%,72%,2%)
-  &.buttons-right
-    +float-form-right(100%,20%,72%,2%,"buttons-right")
+.fieldWithErrors
+  :display inline
 
-.float-right, .float-left, .stack
-  &.input-float
-    +float-inputs
-  &.input-grid
-    +grid-inputs(200px)
-
-
+#errorExplanation
+  :width 400px
+  :border 2px solid #CF0000
+  :padding 0
+  :padding-bottom 12px
+  :margin-bottom 20px
+  :background-color #f0f0f0
+  h2
+    :text-align left
+    :padding 5px 5px 5px 15px
+    :margin 0
+    :font
+      :weight bold
+      :size 12px
+    :background-color #c00
+    :color #fff
+  p
+    :color #333
+    :margin-bottom 0
+    :padding 8px
+  ul
+    :margin 2px 24px
+    li
+      :font-size 12px
+      :list-style disc

@@ -178,43 +178,12 @@ inherited_resources --version '>= 1.0.2' --source http://gemcutter.org
 subdomain_routes --version '>= 0.3.1' --source http://gemcutter.org
 friendly_id --version '>= 2.2.7'
 
-You can check that your app runs properly by entering the command
+Install Gems for Development
 
-script/server 
+The following gems are not needed for the application to run but they will be used during development. Install them now if they are not already installed:
 
-To see your application in action, open a browser window and navigate to http://localhost:3000. You should see the Rails default information page.
-
-Stop the server with Control-C.
-
-Add Stylesheets
-
-You might wait until after you've built your application to begin applying CSS styling to your pages. Or you can do it now and your pages will look more visually appealing during development.
-
-This application uses HAML and its companion SASS to to mark up pages for layout and CSS styling. We also use the formtastic gem in conjunction with a SASS version of formtastic to mark up forms. The SASS version of formtastic is available here: http://github.com/activestylus/formtastic-sass.
-
-Create a directory for the SASS files:
-
-mkdir public/stylesheets/sass
-
-and add SASS stylesheet files for formtastic styling:
-
-http://github.com/activestylus/formtastic-sass/blob/master/_formtastic_base.sass
-http://github.com/activestylus/formtastic-sass/blob/master/_skintastic.sass
-http://github.com/activestylus/test_formtastic_sass/blob/master/public/stylesheets/sass/_scaffold.sass
-
-Create a master application SASS file. Here's one you can use to get started:
-
-http://github.com/activestylus/test_formtastic_sass/blob/master/public/stylesheets/sass/application.sass
-
-Be sure you've imported the formtastic SASS files by adding this at the beginning of the master application SASS file:
-
-@import scaffold.sass
-@import formtastic_base.sass
-@import skintastic.sass
-
-You can refer to http://github.com/activestylus/formtastic-sass for instructions on modifying the styling of forms.
-
-When you launch your web app, HAML will automatically generate an application.css file from the component SASS files.
+sudo gem install nifty-generators
+sudo gem install dry_scaffold
 
 Enable Haml
 
@@ -224,21 +193,55 @@ haml --rails .
 
 (Be sure to include the trailing dot to specify the path to the current directory.)
 
-This will create a Haml plugin in "vendor/plugins". After Haml is initialized, all view files with the ".html.haml" extension will be compiled using Haml.
+This will create a Haml plugin in "vendor/plugins". After Haml is initialized, all view files with the ".html.haml" extension will be compiled using Haml when the application is launched.
 
 Create an Application Layout
 
-Create a application layout default view:
+Create application layout, stylesheet, and helper files.
+
+script/generate nifty_layout --haml
+
+This will create the default layout for every page in the application:
 
 app/views/layouts/application.html.haml
 
-This will be the default layout for every page in the application.
-
-Add a layout helper file:
+As well as a layout helper file with helper methods for page title and stylesheet includes:
 
 app/helpers/layout_helper.rb
 
-This provides some simple helper methods for page title and stylesheet includes.
+and an initial SASS format stylesheet file:
+
+public/stylesheets/sass/application.sass
+
+Add Stylesheets
+
+You might wait until after you've built your application to begin applying CSS styling to your pages. Or you can do it now and your pages will look more visually appealing during development.
+
+This application uses HAML and its companion SASS to to mark up pages for layout and CSS styling. We also use the formtastic gem in conjunction with a SASS version of formtastic to mark up forms. The SASS version of formtastic is available here: http://github.com/activestylus/formtastic-sass.
+
+In the directory for the SASS files:
+
+public/stylesheets/sass
+
+add SASS stylesheet files for formtastic styling:
+
+http://github.com/activestylus/formtastic-sass/blob/master/_formtastic_base.sass
+http://github.com/activestylus/formtastic-sass/blob/master/_skintastic.sass
+http://github.com/activestylus/test_formtastic_sass/blob/master/public/stylesheets/sass/_scaffold.sass
+
+Modify the application SASS file to import the formtastic SASS files:
+
+public/stylesheets/sass/application.sass
+
+Add this at the beginning of the application SASS file:
+
+@import scaffold.sass
+@import formtastic_base.sass
+@import skintastic.sass
+
+As you develop your app, you can refer to http://github.com/activestylus/formtastic-sass for instructions on modifying the styling of forms.
+
+When you launch your web app, HAML will automatically generate an application.css file from the component SASS files.
 
 Create a Home Page
 
@@ -274,11 +277,15 @@ While you are here, you may also want to modify the file public/robots.txt to pr
 User-Agent: *
 Disallow: /
 
+Test the App
+
 You can check that your app runs properly by entering the command
 
 script/server 
 
-Open a browser window and navigate to http://localhost:3000. You should see the new home page. Stop the server with Control-C.
+To see your application in action, open a browser window and navigate to http://localhost:3000. You should see the Rails default information page.
+
+Stop the server with Control-C.
 
 Set Up Configuration for Devise
 
