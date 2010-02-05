@@ -345,6 +345,22 @@ script/generate devise Admin
 
 Modify each migration to add a "name" field to the data table.
 
+Create Model and Migration for Subdomains
+
+Generate a model and migration for Subdomains. Since a Subdomain will belong to a user, the "user:references" parameter adds a field "user_id" to handle the relationship with a User:
+
+script/generate model Subdomain name:string user:references
+
+Modify the Subdomain model so the URL for accessing a subdomain uses a name instead of a number:
+
+class Subdomain < ActiveRecord::Base
+  belongs_to :user
+	has_friendly_id :name
+	def to_param
+		name
+  end
+end
+
 Create a Database and Run Migrations
 
 Now create an empty database. You can do this by running a rake command:
