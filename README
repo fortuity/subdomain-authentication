@@ -514,6 +514,12 @@ map.subdomain :admin do |admin|
 	admin.root :controller => "home"
 end
 
+If you launch the application and visit
+http://admin.localhost:3000/
+you'll be prompted to sign in as an administrator.
+
+Sign in as "admin@test.com" with password "admin123". You'll see an error page because we haven't set up routing, controller and views to implement a link to "View List of Admins".
+
 
 
 
