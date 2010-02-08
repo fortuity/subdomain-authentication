@@ -1,0 +1,10 @@
+%h1.heading
+  = "Editing admin %s" % @admin.id
+  
+- semantic_form_for(@admin, :url => { :controller => 'admins', :action => 'update' }) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', admin_admins_path

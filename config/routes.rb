@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
 	map.subdomain :admin do |admin|
 		admin.root :controller => "AdminHome"
+		admin.resources :admins
 	end
 	
 	map.root :controller => 'home'

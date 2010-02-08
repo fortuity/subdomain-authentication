@@ -1,0 +1,13 @@
+%h1.heading
+  = "Admin %s" % @admin.id
+  
+- content_tag_for(:dl, @admin) do
+  %dt.label= 'Name'
+  %dd.name= h @admin.try(:name)
+  %dt.label= 'Email'
+  %dd.name= h @admin.try(:email)
+  
+%p.actions
+  = link_to 'Edit', edit_admin_admin_path(@admin)
+  |
+  = link_to 'List of Admins', admin_admins_path

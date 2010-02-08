@@ -355,7 +355,26 @@ Use Devise to generate models, migrations, and routes for a User and Admin:
 script/generate devise User
 script/generate devise Admin
 
+Add a Name Attribute to User and Admin
+
+By default, Devise uses an email address to identify users. We'll add a name attribute as well.
+
 Modify each migration to add a "name" field to the data table.
+
+Modify the files:
+
+app/models/admin.rb
+app/models/user.rb
+
+and change:
+
+  attr_accessible :email, :password, :password_confirmation
+
+to:
+
+  attr_accessible :name, :email, :password, :password_confirmation
+
+to allow users and admins to be created (or edited) with a name attribute.
 
 Create Model and Migration for Subdomains
 
@@ -387,7 +406,7 @@ class User < ActiveRecord::Base
   devise :authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation
 end
 
 Create a Site Model
@@ -517,6 +536,136 @@ http://admin.localhost:3000/
 you'll be prompted to sign in as an administrator.
 
 Sign in as "admin@test.com" with password "admin123". You'll see an error page because we haven't set up routing, controller and views to implement a link to "View List of Admins".
+
+Create a Controller and Views to Manage Administrators
+
+We want to view a list of administrators when we log in as an administrator. We also want to allow administrators to edit, delete, and add new administrators.
+
+Create a controller to manage administrators:
+
+touch app/controllers/admins_controller.rb
+
+with the following code:
+
+class AdminsController < InheritedResources::Base
+  defaults :route_prefix => 'admin'
+  actions :index, :show, :new, :edit, :create, :update, :destroy
+  respond_to :html, :js, :xml, :json
+  before_filter :authenticate_admin!
+
+  protected
+    
+    def collection
+      paginate_options ||= {}
+      paginate_options[:page] ||= (params[:page] || 1)
+      paginate_options[:per_page] ||= (params[:per_page] || 20)
+      @admins ||= end_of_association_chain.paginate(paginate_options)
+    end
+        
+end
+
+Create views to manage administrators:
+
+mkdir app/views/admins/
+touch app/views/admins/_form.html.haml
+touch app/views/admins/_item.html.haml
+touch app/views/admins/edit.html.haml
+touch app/views/admins/index.html.haml
+touch app/views/admins/new.html.haml
+touch app/views/admins/show.html.haml
+
+Add the following code to each file:
+
+app/views/admins/_form.html.haml
+
+- form.inputs do
+  = form.input :name, :label => 'Name'
+  = form.input :email, :label => 'Email'
+  = form.input :password, :label => 'Password'
+
+app/views/admins/_item.html.haml
+
+- content_tag_for(:tr, admin, :class => cycle(:odd, :even)) do
+  %td.name= h admin.try(:name)
+  %td.actions
+    = link_to 'Show', admin_admin_path(admin)
+    |
+    = link_to 'Edit', edit_admin_admin_path(admin)
+    |
+    = link_to 'Destroy', admin_admin_url(admin), :confirm => 'Are you sure?', :method => :delete
+
+app/views/admins/edit.html.haml
+
+%h1.heading
+  = "Editing admin %s" % @admin.id
+  
+- semantic_form_for(@admin, :url => { :controller => 'admins', :action => 'update' }) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Update'
+    
+%p.actions
+  = link_to 'Cancel', admin_admins_path
+
+app/views/admins/index.html.haml
+
+%h1.heading
+  = "Admins"
+  
+%p.actions
+  = link_to 'New Admin', new_admin_admin_path
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.actions= 'Actions'
+  %tbody.items.admins
+    - @admins.each do |admin|
+      = render 'item', :admin => admin
+      
+= will_paginate(@admins)
+
+app/views/admins/new.html.haml
+
+%h1.heading
+  = 'New Admin'
+  
+- semantic_form_for(@admin, :url => { :controller => 'admins', :action => 'create' }) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', admin_admins_path
+
+app/views/admins/show.html.haml
+
+%h1.heading
+  = "Admin %s" % @admin.id
+  
+- content_tag_for(:dl, @admin) do
+  %dt.label= 'Name'
+  %dd.name= h @admin.try(:name)
+  %dt.label= 'Email'
+  %dd.name= h @admin.try(:email)
+  
+%p.actions
+  = link_to 'Edit', edit_admin_admin_path(@admin)
+  |
+  = link_to 'List of Admins', admin_admins_path
+
+
+Implement Routing for Administrators
+
+Modify the following routes to implement this use case:
+
+map.subdomain :admin do |admin|
+	admin.root :controller => "AdminHome"
+	admin.resources :admins
+end
+
+Now you can sign in as "admin@test.com" with password "admin123". You can "View List of Admins" and edit, delete, and add new administrators.
 
 
 

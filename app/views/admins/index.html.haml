@@ -1,0 +1,16 @@
+%h1.heading
+  = "Admins"
+  
+%p.actions
+  = link_to 'New Admin', new_admin_admin_path
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.actions= 'Actions'
+  %tbody.items.admins
+    - @admins.each do |admin|
+      = render 'item', :admin => admin
+      
+= will_paginate(@admins)
