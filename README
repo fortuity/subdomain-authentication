@@ -478,6 +478,46 @@ if Rails.env.to_sym == :production
   	SubdomainRoutes::Config.domain_length = 2
 end
 
+Create a Controller and View for an Administrative Home Page
+
+We want administrators to visit the "admin" subdomain and view an administrative home page.
+
+Create a controller for an administrative home page:
+
+touch app/controllers/admin_home_controller.rb
+
+with the following code:
+
+class AdminHomeController < ApplicationController
+  before_filter :authenticate_admin!
+  def index
+  end
+end
+
+Create a view for an administrative home page:
+
+mkdir app/views/admin_home/
+touch app/views/admin_home/index.html.haml
+
+with the following code:
+
+- title 'Admin Home'
+%p
+  Welcome to the Admin section of the application.
+= link_to "View List of Admins", admin_admins_path
+
+Add the following routes to implement this use case. Edit the file config/routes.rb and add:
+
+map.subdomain :admin do |admin|
+	admin.root :controller => "adminhome"
+end
+
+If you launch the application and visit
+http://admin.localhost:3000/
+you'll be prompted to sign in as an administrator.
+
+Sign in as "admin@test.com" with password "admin123". You'll see an error page because we haven't set up routing, controller and views to implement a link to "View List of Admins".
+
 
 
 

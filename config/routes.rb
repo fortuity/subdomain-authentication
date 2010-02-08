@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
 
 	map.subdomain :admin do |admin|
-		admin.root :controller => "home"
+		admin.root :controller => "AdminHome"
 	end
 	
 	map.root :controller => 'home'
