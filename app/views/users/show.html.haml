@@ -1,0 +1,11 @@
+%h1.heading
+  = "User %s" % @user.id
+  
+- content_tag_for(:dl, @user) do
+  %dt.label= 'Name'
+  %dd.name= h @user.try(:name)
+
+%p.actions
+  = link_to 'Edit', edit_user_path(@user)
+  |
+  = link_to 'List of Users', users_path

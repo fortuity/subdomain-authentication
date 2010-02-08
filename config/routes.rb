@@ -3,6 +3,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.devise_for :users
 
+	map.subdomain nil do |main|
+		main.root :controller => "home"
+		main.resources :users
+	end
+
 	map.subdomain :admin do |admin|
 		admin.root :controller => "AdminHome"
 		admin.resources :admins

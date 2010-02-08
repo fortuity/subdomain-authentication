@@ -1,19 +1,39 @@
 !!! Strict
 %html{html_attrs}
-  
+
   %head
     %title
       = h(yield(:title) || "Untitled")
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = stylesheet_link_tag 'application'
     = yield(:head)
-  
+
   %body
     #container
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-      
-      - if show_title?
-        %h1=h yield(:title)
-      
-      = yield
+      #navigation
+        - if user_signed_in?
+          = link_to "Home", root_path
+          |
+          = link_to 'My Account', user_path(current_user)
+          |
+          = link_to 'Sign out', destroy_user_session_path
+        - if admin_signed_in?
+          = link_to 'Admin Home', admin_root_path
+          |
+          = link_to 'Sign out', destroy_admin_session_path
+        - if !user_signed_in? && !admin_signed_in?
+          = link_to "Home", root_path
+          |
+          = link_to 'Register', new_user_path
+          |
+          = link_to 'Admin Login', admin_root_path
+          |
+          = link_to 'User Login', new_user_session_path
+
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+      #content
+        - if show_title?
+          %h1=h yield(:title)
+
+        = yield

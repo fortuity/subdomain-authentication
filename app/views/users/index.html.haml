@@ -1,0 +1,13 @@
+%h1.heading
+  = "Users"
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.actions= 'Actions'
+  %tbody.items.users
+    - @users.each do |user|
+      = render 'item', :user => user
+      
+= will_paginate(@users)
