@@ -1141,8 +1141,51 @@ If you launch the application and visit
 http://localhost:3000/
 and login as a user, you can click a link to create a new subdomain.
 
+Deploy to Heroku
 
+For your convenience, here are instructions for deploying your app to Heroku. Heroku provides low cost, easily configured Rails application hosting.
 
+To deploy this app to Heroku, you must have a Heroku account. If you need to obtain one, visit http://heroku.com/ to set up an account. After you set up a Heroku account, install the Heroku gem:
+
+sudo gem install heroku
+
+Add your public key immediately after installing the heroku gem so that you can use git to push or clone Heroku app repositories. See http://docs.heroku.com/heroku-command for details.
+
+Create Your Application on Heroku
+
+Use the Heroku create command to create and name your new app:
+
+heroku create subdomain-authentication
+
+Push your application to Heroku
+
+git push heroku master
+
+Set up your Heroku database:
+
+heroku rake db:migrate
+
+Initialize your application database:
+
+heroku rake myapp:setup
+
+Heroku Add-ons
+
+You will need the following Heroku add-ons to deploy your app using subdomains with your own custom domain:
+
+Custom Domains (free)
+Custom Domains + Wildcard ($5 per month)
+Zerigo DNS (free)
+
+Open your Heroku site in your default web browser:
+
+heroku open
+
+If you get errors, you can troubleshoot by reviewing the log files:
+
+heroku logs
+
+This concludes the tutorial for creating a Ruby on Rails web application that uses subdomains and provides user management and authentication.
 
 
 
