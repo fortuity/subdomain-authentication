@@ -1,0 +1,10 @@
+%h1.heading
+  = 'New Subdomain'
+  
+- semantic_form_for [@user, @subdomain]  do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+    
+%p.actions
+  = link_to 'Cancel', user_subdomains_path

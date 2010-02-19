@@ -1,0 +1,5 @@
+- content_tag_for(:tr, subdomain, :class => cycle(:odd, :even)) do
+  %td.name= h subdomain.try(:name)
+  %td.user_id= link_to subdomain.user.name, user_url(subdomain.user)
+  %td.actions
+    = link_to 'Destroy', user_subdomain_url(subdomain.user,subdomain), :confirm => 'Are you sure?', :method => :delete

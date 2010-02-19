@@ -6,6 +6,18 @@
   %dd.name= h @user.try(:name)
 
 %p.actions
+  = link_to 'New Subdomain', new_user_subdomain_path(@user)
+
+%table
+  %thead.header
+    %tr
+      %th.name= 'Subdomains'
+      %th.actions= 'Actions'
+  %tbody.items.subdomains
+    - @user.subdomains.each do |subdomain|
+      = render 'subdomain_item', :subdomain => subdomain
+
+%p.actions
   = link_to 'Edit', edit_user_path(@user)
   |
   = link_to 'List of Users', users_path

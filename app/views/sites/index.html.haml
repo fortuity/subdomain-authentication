@@ -1,0 +1,13 @@
+%h1.heading
+  = "Sites"
+  
+%table
+  %thead.header
+    %tr
+      %th.actions= 'Site | '
+      %th.actions= 'Belongs to'
+  %tbody.items.sites
+    - @sites.each do |site|
+      = render 'item', :site => site
+      
+= will_paginate(@sites)

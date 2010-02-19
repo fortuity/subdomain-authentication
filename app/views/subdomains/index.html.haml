@@ -1,0 +1,14 @@
+%h1.heading
+  = "Subdomains"
+  
+%table
+  %thead.header
+    %tr
+      %th.name= 'Name'
+      %th.user_id= 'User'
+      %th.actions= 'Actions'
+  %tbody.items.subdomains
+    - @subdomains.each do |subdomain|
+      = render 'item', :subdomain => subdomain
+      
+= will_paginate(@subdomains)

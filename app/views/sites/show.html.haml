@@ -1,0 +1,10 @@
+%h1.heading
+  = "Site %s" % @site.id
+%h3.heading
+  Subdomain:
+  = @site.name
+%h3.heading
+  Belongs to:
+  = link_to @site.user.name, user_path(@site.user)
+%p.actions
+  = link_to 'List of Sites', site_sites_path(@site)
