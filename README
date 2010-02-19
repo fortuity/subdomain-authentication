@@ -114,9 +114,15 @@ will_paginate (version 2.3.12)
 formtastic (version 0.9.7)
 devise (version 0.9.1)
 warden (version 0.9.0)
-inherited_resources (version 1.0.2)
+inherited_resources (version 1.0.3)
 subdomain_routes (version 0.3.1))
 friendly_id (version 2.2.7)
+
+Note that the inherited_resources gem must be version 1.0.3. A newer version of the inherited_resources gem (version 1.1.0) now only supports Rails 3 and is NOT backward compatible. The instructions below force your app to use inherited_resources version 1.0.3 and not the newer version. If you launch the app and get the error
+
+uninitialized constant Rails::Railtie
+
+you are using a newer version of the inherited_resources gem.
 
 Install Gems
 
@@ -146,7 +152,7 @@ sudo gem install will_paginate
 sudo gem install formtastic
 sudo gem install devise
 sudo gem install warden
-sudo gem install inherited_resources
+sudo gem install inherited_resources --version=1.0.3
 sudo gem install subdomain_routes
 sudo gem install friendly_id
 
@@ -168,7 +174,7 @@ Rails::Initializer.run do |config|
 	config.gem 'formtastic', :source => 'http://gemcutter.org/', :version => '>= 0.9.7'
 	config.gem 'devise', :source => 'http://gemcutter.org/', :version => '>= 0.9.1'
 	config.gem 'warden', :source => 'http://gemcutter.org/', :version => '>= 0.9.0'
-	config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/",:version => '>= 1.0.2'
+	config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/",:version => '1.0.3'
 	config.gem "subdomain_routes", :source => "http://gemcutter.org", :version => '>= 0.3.1'
 	config.gem 'friendly_id', :version => '>= 2.2.7'
 		
@@ -186,7 +192,7 @@ will_paginate --version '>= 2.3.12' --source http://gemcutter.org
 formtastic --version '>= 0.9.7' --source http://gemcutter.org
 devise --version '>= 0.9.1' --source http://gemcutter.org
 warden --version '>= 0.9.0' --source http://gemcutter.org
-inherited_resources --version '>= 1.0.2' --source http://gemcutter.org
+inherited_resources --version '1.0.3' --source http://gemcutter.org
 subdomain_routes --version '>= 0.3.1' --source http://gemcutter.org
 friendly_id --version '>= 2.2.7'
 
