@@ -7,15 +7,15 @@ RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-	config.gem 'haml', :lib => 'haml', :version => '>=2.2.17'
-	config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.12'
-	config.gem 'formtastic', :source => 'http://gemcutter.org/', :version => '>= 0.9.7'
-	config.gem 'devise', :source => 'http://gemcutter.org/', :version => '>= 0.9.1'
-	config.gem 'warden', :source => 'http://gemcutter.org/', :version => '0.9.0'
-	config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/", :version => '1.0.3'
-	config.gem "subdomain_routes", :source => "http://gemcutter.org", :version => '>= 0.3.1'
-	config.gem 'friendly_id', :version => '>= 2.2.7'
-	
+  config.gem 'haml', :lib => 'haml', :version => '>=2.2.17'
+  config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.12'
+  config.gem 'formtastic', :source => 'http://gemcutter.org/', :version => '>= 0.9.7'
+  config.gem 'warden', :source => 'http://gemcutter.org/', :version => '0.9.3'
+  config.gem 'devise', :source => 'http://gemcutter.org/', :version => '1.0.1'
+  config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/", :version => '1.0.3'
+  config.gem "subdomain_routes", :source => "http://gemcutter.org", :version => '>= 0.3.1'
+  config.gem 'friendly_id', :version => '>= 2.2.7'
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

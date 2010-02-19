@@ -112,13 +112,15 @@ The application uses the following gems:
 haml (version 2.2.17)
 will_paginate (version 2.3.12)
 formtastic (version 0.9.7)
-devise (version 0.9.1)
-warden (version 0.9.0)
+warden (version 0.9.3)
+devise (version 1.0.1)
 inherited_resources (version 1.0.3)
 subdomain_routes (version 0.3.1))
 friendly_id (version 2.2.7)
 
-Note that the inherited_resources gem must be version 1.0.3. A newer version of the inherited_resources gem (version 1.1.0) now only supports Rails 3 and is NOT backward compatible. The instructions below force your app to use inherited_resources version 1.0.3 and not the newer version. If you launch the app and get the error
+Note that the devise gem must be version 1.0.1 (and the warden gem must be version 0.9.3 to match). Newer versions of this gem only support Rails 3 and are NOT backward compatible. The instructions below force your app to use the correct version of this gem.
+
+Note that the inherited_resources gem must be version 1.0.3. A newer version of the inherited_resources gem (version 1.1.0) only supports Rails 3 and is NOT backward compatible. The instructions below force your app to use inherited_resources version 1.0.3 and not the newer version. If you launch the app and get the error
 
 uninitialized constant Rails::Railtie
 
@@ -150,8 +152,8 @@ If they are not already installed, install the required gems on your computer:
 sudo gem install haml
 sudo gem install will_paginate
 sudo gem install formtastic
-sudo gem install devise
-sudo gem install warden
+sudo gem install warden --version=0.9.3
+sudo gem install devise --version=1.0.1
 sudo gem install inherited_resources --version=1.0.3
 sudo gem install subdomain_routes
 sudo gem install friendly_id
