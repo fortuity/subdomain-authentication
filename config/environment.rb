@@ -11,7 +11,7 @@ Rails::Initializer.run do |config|
 	config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.12'
 	config.gem 'formtastic', :source => 'http://gemcutter.org/', :version => '>= 0.9.7'
 	config.gem 'devise', :source => 'http://gemcutter.org/', :version => '>= 0.9.1'
-	config.gem 'warden', :source => 'http://gemcutter.org/', :version => '>= 0.9.0'
+	config.gem 'warden', :source => 'http://gemcutter.org/', :version => '0.9.0'
 	config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/", :version => '1.0.3'
 	config.gem "subdomain_routes", :source => "http://gemcutter.org", :version => '>= 0.3.1'
 	config.gem 'friendly_id', :version => '>= 2.2.7'
