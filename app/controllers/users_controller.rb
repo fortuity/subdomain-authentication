@@ -4,21 +4,6 @@ class UsersController < InheritedResources::Base
   respond_to :html, :js, :xml, :json
   before_filter :find_user, :only => [:edit, :update, :destroy]
 
-  def create
-    @user = User.new(params[:user])
-    if @user.save
-      if @user.respond_to?(:confirm!)
-        flash[:notice] = t('devise.confirmations.send_instructions')
-        # sign_in @user if @user.class.confirm_within > 0
-      else
-        flash[:notice] = t('flash.users.create.notice', :default => 'User was successfully created.')
-      end
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
-  end
-
   protected
 
     def collection
