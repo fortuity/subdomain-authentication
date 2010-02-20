@@ -1,5 +1,5 @@
 class AdminsController < InheritedResources::Base
-  defaults :route_prefix => 'admin'
+
   actions :index, :show, :new, :edit, :create, :update, :destroy
   respond_to :html, :js, :xml, :json
   before_filter :authenticate_admin!
