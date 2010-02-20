@@ -513,6 +513,16 @@ if Rails.env.to_sym == :production
   	SubdomainRoutes::Config.domain_length = 2
 end
 
+Modify the Application Controller
+
+We don't want passwords written to our log file. Change the file
+
+app/controllers/application_controller.rb
+
+to include:
+
+filter_parameter_logging :password, :password_confirmation
+
 Create a Controller and View for an Administrative Home Page
 
 We want administrators to visit the "admin" subdomain and view an administrative home page.
