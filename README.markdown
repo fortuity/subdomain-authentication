@@ -16,7 +16,7 @@ The tutorial documents each step that you must follow to create this application
 2. Visitors to the main application (without a subdomain) can register as users and create subdomains.
 3. Any visitor can visit a subdomain and see a "site" home page.
 
-## Assumptions
+## Dependencies
 
 This application requires Rails version 2.3.5. Some of the code shown here will not work in older versions of Rails. 
 
@@ -28,3 +28,49 @@ To use this application, you need to install
 * The RubyGems packaging system (version 1.3.5 or newer)
 * A working installation of SQLite (preferred), MySQL, or PostgreSQL
 * Rails (version 2.3.5 or newer)
+
+## Gems Required
+
+The application uses the following gems:
+
+* haml (version 2.2.17)
+* will_paginate (version 2.3.12)
+* formtastic (version 0.9.7)
+* warden (version 0.9.3)
+* devise (version 1.0.1)
+* inherited_resources (version 1.0.3)
+* subdomain_routes (version 0.3.1)
+* friendly_id (version 2.2.7)
+
+## Get It
+
+The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from [http://git.or.cz/](http://git.or.cz/)).
+
+You can download the app ("clone the repository") with the command
+
+	$ git@github.com:fortuity/subdomain-authentication.git
+
+## Testing
+
+The application does not include tests (of either Test::Unit or RSpec varieties). It relies on  [Devise](http://github.com/plataformatec/devise) which includes extensive tests. This application is intended to be a basis for your own customized application and (in most cases) you will be writing your own tests for your required behavior.
+
+## Documentation and Support
+
+You can find documentation for [Devise](http://github.com/plataformatec/devise) at [http://github.com/plataformatec/devise](http://github.com/plataformatec/devise). There is an active [Devise mailing list](http://groups.google.com/group/plataformatec-devise) and you can submit [Devise issues](http://github.com/plataformatec/devise/issues) at GitHub.
+
+You can find documentation for [subdomain_routes](http://github.com/mholling/subdomain_routes/) at [http://github.com/mholling/subdomain_routes/](http://github.com/mholling/subdomain_routes/). There is no active forum for support but you can post to [Matthew Hollingworth's blog](http://code.matthewhollingworth.net/articles/2009-06-02-adding-subdomains-to-rails-routing) with questions and submit [subdomain_routes issues](http://github.com/mholling/subdomain_routes/issues) at GitHub.
+
+The [Devise](http://github.com/plataformatec/devise) community and  [subdomain_routes](http://github.com/mholling/subdomain_routes/) author are your best source for answers to questions about authentication and subdomain implementation. For specific issues with this application, you can submit [bug reports](http://github.com/fortuity/subdomain-authentication/issues) at GitHub. If you want to post complaints (or praise!) about this application, there is a forum for this application at [Get Satisfaction](http://getsatisfaction.com/origin/products/origin_rails_23subdomain_authentication_example_application).
+
+This application is provided without additional documentation or support.
+
+## Credits
+
+Daniel Kehoe ([http://danielkehoe.com/](http://danielkehoe.com/)) implemented the application and wrote the tutorial.
+
+## License
+
+### Public Domain Dedication
+
+This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
+
