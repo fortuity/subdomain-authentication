@@ -1,22 +1,22 @@
-h1. Subdomain-Authentication
+# Subdomain-Authentication
 
 You can use this project as a starting point for any Rails web application that requires subdomains and authentication. User management and authentication is implemented using "Devise":http://github.com/plataformatec/devise. The "subdomain_routes":http://github.com/mholling/subdomain_routes/ gem implements subdomains and routing.
 
-h2. Tutorial
+## Tutorial
 
 A complete "walkthrough" tutorial is available on the GitHub wiki:
 
-"Tutorial":http://wiki.github.com/fortuity/subdomain-authentication/
+[Tutorial](http://wiki.github.com/fortuity/subdomain-authentication/)
 
-The tutorial documents each step that you must follow to create this application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you're advised to look for an introduction to Rails elsewhere.
+This tutorial documents each step that you must follow to create this application.
 
-h2. Use Cases
+## Use Cases
 
-# Administrators can visit the "admin" subdomain and view an administrative home page.
-# Visitors to the main application (without a subdomain) can register as users and create subdomains.
-# Any visitor can visit a subdomain and see a "site" home page.
+1) Administrators can visit the "admin" subdomain and view an administrative home page.
+2) Visitors to the main application (without a subdomain) can register as users and create subdomains.
+3) Any visitor can visit a subdomain and see a "site" home page.
 
-h2. Assumptions
+## Assumptions
 
 This tutorial is based on Rails version 2.3.5. Some of the code shown here will not work in older versions of Rails. 
 
@@ -24,83 +24,84 @@ This was written before the release of Rails 3.0. Things will change significant
 
 Before beginning this tutorial, you need to install 
 
-* The Ruby language (version 1.8.7 or newer)
+* The Ruby language ruby (version 1.8.7 or newer)
 * The RubyGems packaging system (version 1.3.5 or newer)
 * A working installation of SQLite (preferred), MySQL, or PostgreSQL
 * Rails (version 2.3.5 or newer)
 
 Check that current versions are installed on your computer:
-@$ ruby -v@
-@$ gem -v@
-@$ rails -v@
 
-You should have experience building a simple Rails application. Refer to "Rails Guides":http://guides.rubyonrails.org/ for help if you are a beginner.
+ruby -v
+gem -v
+rails -v
 
-h2. Create the Rails Application
+You should have experience building a simple Rails application. Refer to http://guides.rubyonrails.org/ (Rails Guides) for help if you are a beginner.
+
+## Create the Rails Application
 
 Open a terminal, navigate to a folder where you have rights to create files, and type:
 
-@$ rails subdomain-authentication@
+$ rails subdomain-authentication
 
 You may give the app a different name if you are building it for your own use. For this tutorial, we'll assume the name is "subdomain-authentication."
 
-This will create a Rails application that uses a SQLite database for data storage. You may also use MySQL or PostgreSQL for data storage (refer to "Getting Started with Rails":http://guides.rubyonrails.org/getting_started.html).
+This will create a Rails application that uses a SQLite database for data storage. You may also use MySQL or PostgreSQL for data storage (refer to http://guides.rubyonrails.org/getting_started.html (Getting Started with Rails)).
 
 After you create the application, switch to its folder to continue work directly in that application:
 
-@$ cd subdomain-authentication@
+$ cd subdomain-authentication
 
-Edit the README file to remove the standard Rails boilerplate. Add what you like (perhaps the name of your app?).
+Edit the README file to remove the standard Rails boilerplate. Add what you like (at least the name of the app).
 
-h2. Set Up Source Control (Git)
+Set Up Source Control (Git)
 
 If you're creating an app for deployment into production, you'll want to set up a source control repository at this point. If you are building a throw-away app for your own education, you may skip this step.
 
 Check that git is installed on your computer:
 
-@$ git version@
+git version
 
-Create a *.gitignore* file containing:
+Create a top, project-level .gitignore file containing:
 
-<pre>
 .DS_Store
 log/*.log
 tmp/**/*
 config/database.yml
 config/initializers/site_keys.rb
 db/*.sqlite3
-</pre>
 
 Initialize git and check in your first commit:
 
-@$ git init@
-@$ git add .@
-@$ git commit -m 'initial commit'@
+git init
+git add .
+git commit -m 'initial commit'
 
 You can check your commit status at any time with:
 
-@$ git status@
+git status
 
 At this point you can check your local project into a remote source control repository. We'll assume you are using git with an account at GitHub.
 
 Check that your GitHub account is set up properly:
 
-@$ ssh git(at)github.com@
+ssh git@github.com
 
-Go to GitHub and create a new empty repository ("http://github.com/repositories/new":http://github.com/repositories/new) into which you can push your local git repo.
+Go to GitHub and create a new empty repository into which you can push your local git repo:
+
+http://github.com/repositories/new
 
 Add GitHub as a remote repository for your project and push your local project to the remote repository:
 
-@$ git remote add origin git(at)github.com:YOUR_GITHUB_ACCOUNT/YOUR_PROJECT_NAME.git@
-@$ git push origin master@
+git remote add origin git@github.com:YOUR_GITHUB_ACCOUNT/YOUR_PROJECT_NAME.git
+git push origin master
 
 At each stage of completion, you should check your code into your local repository:
 
-@$ git commit -a -m "some helpful comment"@
+git commit -a -m "some helpful comment" 
 
 and then push it to the remote repository:
 
-@$ git push origin master@
+git push origin master
 
 Required Gems
 
