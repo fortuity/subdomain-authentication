@@ -48,7 +48,7 @@ The source code is managed with Git (a version control system) and hosted at Git
 
 You can download the app ("clone the repository") with the command
 
-	$ git@github.com:fortuity/subdomain-authentication.git
+	$ git clone git@github.com:fortuity/subdomain-authentication.git
 
 ## Testing
 
