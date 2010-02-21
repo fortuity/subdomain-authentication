@@ -1,8 +1,8 @@
-# Subdomain-Authentication
+Subdomain-Authentication
 
 You can use this project as a starting point for any Rails web application that requires subdomains and authentication. User management and authentication is implemented using "Devise":http://github.com/plataformatec/devise. The "subdomain_routes":http://github.com/mholling/subdomain_routes/ gem implements subdomains and routing.
 
-## Tutorial
+Tutorial
 
 A complete "walkthrough" tutorial is available on the GitHub wiki:
 
@@ -10,13 +10,13 @@ A complete "walkthrough" tutorial is available on the GitHub wiki:
 
 This tutorial documents each step that you must follow to create this application.
 
-## Use Cases
+Use Cases
 
 1) Administrators can visit the "admin" subdomain and view an administrative home page.
 2) Visitors to the main application (without a subdomain) can register as users and create subdomains.
 3) Any visitor can visit a subdomain and see a "site" home page.
 
-## Assumptions
+Assumptions
 
 This tutorial is based on Rails version 2.3.5. Some of the code shown here will not work in older versions of Rails. 
 
@@ -37,7 +37,7 @@ rails -v
 
 You should have experience building a simple Rails application. Refer to http://guides.rubyonrails.org/ (Rails Guides) for help if you are a beginner.
 
-## Create the Rails Application
+Create the Rails Application
 
 Open a terminal, navigate to a folder where you have rights to create files, and type:
 
