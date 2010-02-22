@@ -4,24 +4,24 @@ ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
 
   map.subdomain nil do |main|
-		main.root :controller => "home"
+    main.root :controller => "home"
     main.resources :users do |users|
-			users.resources :subdomains, :except => [:edit, :show] 
-		end
+      users.resources :subdomains, :except => [:edit, :show] 
+    end
   end
 
-	map.subdomain :admin do |admin|
-		admin.root :controller => "AdminHome"
-		admin.resources :admins
-	end
+  map.subdomain :admin do |admin|
+    admin.root :controller => "AdminHome"
+    admin.resources :admins
+  end
 
-	map.subdomain :model => :site do |site|
-	  site.root :controller => "sites", :action => "show"
-	  site.resources :sites, :only => [:index, :show] 
-	end
+  map.subdomain :model => :site do |site|
+    site.root :controller => "sites", :action => "show"
+    site.resources :sites, :only => [:index, :show] 
+  end
 
-	map.root :controller => 'home'
-	
+  map.root :controller => 'home'
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
