@@ -1,4 +1,4 @@
-namespace :myapp do
+namespace :sdauth do
 
   desc 'set up subdomain-authentication example with default user and administrator'
   task :setup => ['db:drop', 'db:create', 'db:migrate', 'environment'] do
