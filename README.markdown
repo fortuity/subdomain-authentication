@@ -127,6 +127,12 @@ The [Devise](http://github.com/plataformatec/devise) community and  [subdomain_r
 
 This application is provided without additional documentation or support.
 
+## Similar Applications
+
+For a similar application (for Rails 2.3) that uses [Authlogic](http://github.com/binarylogic/authlogic/tree/master) and [Subdomain_fu](http://github.com/mbleigh/subdomain-fu), see [authlogic_subdomain_fu_startup_app](http://github.com/devinterface/authlogic_subdomain_fu_startup_app).
+
+For a simple Devise example (without subdomains), see [plataformatec/devise_example](http://github.com/plataformatec/devise_example).
+
 ## Credits
 
 Daniel Kehoe ([http://danielkehoe.com/](http://danielkehoe.com/)) implemented the application and wrote the tutorial.
