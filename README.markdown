@@ -6,9 +6,11 @@ You can use this project as a starting point for any Rails web application that 
 
 A complete "walkthrough" tutorial is available on the GitHub wiki:
 
-[Tutorial](http://wiki.github.com/fortuity/subdomain-authentication/tutorial-walkthrough)
+[View the Tutorial](http://wiki.github.com/fortuity/subdomain-authentication/tutorial-walkthrough)
 
-The tutorial documents each step that you must follow to create this application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere.
+The tutorial documents each step we followed to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere.
+
+If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
 ## Use Cases
 
