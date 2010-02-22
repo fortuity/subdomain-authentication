@@ -4,6 +4,8 @@
 - content_tag_for(:dl, @user) do
   %dt.label= 'Name'
   %dd.name= h @user.try(:name)
+  %dt.label= 'Email'
+  %dd.name= h @user.try(:email)
 
 %p.actions
   = link_to 'New Subdomain', new_user_subdomain_path(@user)
