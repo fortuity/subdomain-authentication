@@ -14,9 +14,11 @@ If you simply wish to modify the application for your own project, you can downl
 
 ## Use Cases
 
-1. Administrators can visit the "admin" subdomain and view an administrative home page.
-2. Visitors to the main application (without a subdomain) can register as users and create subdomains.
-3. Any visitor can visit a subdomain and see a "site" home page.
+1. Administrators can visit the "admin" subdomain and view an administrative home page or list of administrators.
+2. Only an administrator can create a new administrator (no email confirmation is needed).
+3. Any administrator can change or delete another administrator.
+4. Visitors to the main application (without a subdomain) can register as users and create subdomains.
+5. Any visitor can visit a subdomain and see a "site" home page.
 
 ## Dependencies
 
