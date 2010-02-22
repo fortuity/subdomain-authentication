@@ -42,13 +42,74 @@ The application uses the following gems:
 * subdomain_routes (version 0.3.1)
 * friendly_id (version 2.2.7)
 
-## Get It
+## Download
 
 The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from [http://git.or.cz/](http://git.or.cz/)).
 
 You can download the app ("clone the repository") with the command
 
-	$ git clone git@github.com:fortuity/subdomain-authentication.git
+  $ git clone git@github.com:fortuity/subdomain-authentication.git
+  
+## Getting Started
+
+### Configure Email
+
+Configure email by modifying
+
+  config/initializers/devise.rb
+  
+and setting the return email address for emails sent from the application.
+  
+You may need to set values for your mailhost in
+
+  config/environments/development.rb
+  config/environments/production.rb
+
+### Set Up the Database
+
+You can use the default database settings if you're using SQLite. 
+
+If you're using MySQL, you'll need to edit the file
+
+  config/database.yml
+
+Set up the database by running
+
+  $ rake db:create
+  $ rake db:migrate
+  $ rake sdauth:setup
+
+Running the "sdauth:setup" rake task sets up an initial administrator and user. You can modify the file
+
+  lib/tasks/setup.rake
+
+if you wish to change the administrator and user logins before you run the migration.
+
+### Launch the Application
+
+Start the server
+
+  $ script/server
+
+and go to [http://localhost:3000/](http://localhost:3000/). 
+
+To sign in as the pre-configured administrator, (unless you've changed it) use
+
+    email: admin@test.com
+    password: admin123
+
+To sign in as the pre-configured user, (unless you've changed it) use
+
+    email: user@test.com
+    password: user123
+
+You should delete or change the pre-configured logins before you deploy your application.
+
+## Customizing
+
+[Devise](http://github.com/plataformatec/devise) provides a variety of features for implementing authentication. See the Devise documentation for options.
+
+This application provides no useful functionality apart from implementing subdomains and authentication. You can begin adding functionality by modifying the Site model (for example, to create a blog for each subdomain).
 
 ## Testing
 
