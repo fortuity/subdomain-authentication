@@ -1,0 +1,11 @@
+%h1.heading
+  = 'Sign up'
+
+- semantic_form_for(resource_name, resource, :url => registration_path(resource_name)) do |form|
+  - form.inputs do
+    = form.input :name, :label => 'Name'
+    = form.input :email, :label => 'Email'
+    = form.input :password, :label => 'Password'
+    = form.input :password_confirmation, :label => 'Password confirmation'
+  - form.buttons do
+    = form.commit_button 'Sign up'

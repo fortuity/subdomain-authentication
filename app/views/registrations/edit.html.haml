@@ -1,0 +1,18 @@
+%h1.heading
+  = "Editing %s" % @user.name
+  
+- semantic_form_for(resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put }) do |form|
+  - form.inputs do
+    = form.input :name, :label => 'Name'
+    = form.input :email, :label => 'Email'
+    = form.input :password, :label => 'Password (leave blank if you don\'t want to change it)'
+    = form.input :password_confirmation, :label => 'Password confirmation'
+    = form.input :current_password, :label => 'Current Password (we need your current password to confirm your changes)'
+  - form.buttons do
+    = form.commit_button 'Update'
+
+%p.actions
+  = link_to 'Delete my account', registration_path(resource_name), :confirm => 'Are you sure?', :method => :delete
+
+%p.actions
+  = link_to 'Back', :back

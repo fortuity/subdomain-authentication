@@ -24,7 +24,7 @@
         - if !user_signed_in? && !admin_signed_in?
           = link_to "Home", root_path
           |
-          = link_to 'Register', new_user_path
+          = link_to 'Sign Up', new_registration_path(:user)
           |
           = link_to 'Admin Login', admin_root_path
           |

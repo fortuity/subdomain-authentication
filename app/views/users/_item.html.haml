@@ -1,6 +1,6 @@
 - content_tag_for(:tr, user, :class => cycle(:odd, :even)) do
   %td.name=link_to user.name, user_path(user)
   %td.actions
-    = link_to 'Edit', edit_user_path(user)
+    = link_to 'Edit', edit_user_registration_path
     |
-    = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+    = link_to 'Destroy', registration_path(:user), :confirm => 'Are you sure?', :method => :delete

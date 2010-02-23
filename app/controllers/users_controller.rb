@@ -1,8 +1,7 @@
 class UsersController < InheritedResources::Base
 
-  actions :index, :show, :new, :edit, :create, :update, :destroy
+  actions :index, :show
   respond_to :html, :js, :xml, :json
-  before_filter :find_user, :only => [:edit, :update, :destroy]
 
   protected
 
@@ -13,11 +12,4 @@ class UsersController < InheritedResources::Base
       @users ||= end_of_association_chain.paginate(paginate_options)
     end
 
-    def find_user
-      @user = User.find(params[:id])
-      unless current_user == @user
-        flash[:alert]  = "You are not allowed to make changes to someone else's account."
-        redirect_to user_path(@user)
-      end
-    end
 end
