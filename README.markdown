@@ -135,6 +135,18 @@ The [Devise](http://github.com/plataformatec/devise) community and  [subdomain_r
 
 This application is provided without additional documentation or support.
 
+## Implementation and Architectural Issues
+
+I've tried to follow current Rails best practices (to the extent I'm aware of them). If you see errors in approach or have suggestions for improvements, I'd like to hear from you so that I can make corrections.
+
+### Namespacing
+
+This application doesn't use namespacing. It is "flat." All controllers are in the controllers directory; there are no subdirectories. The same is true of views; each set of views is in its own subdirectory; there are no hierarchies of views nested in additional subdirectories.
+
+One could implement this application with namespacing by moving admin controllers to an _app/controllers/admin_ directory and moving admin view subdirectories to an _app/views/admin_ directory. Controllers and views for the main domain or subdomains could also be moved to subdirectories. This offers the benefit of organizing the code  but introduces complexity. For an example application, I've decided namespacing is unnecessarily complex.
+
+If you implement a namespaced version of this application, please let me know and I'll provide a link so others can see how it is done.
+
 ## Contributing
 
 If you make improvements to this application, please share with others.
