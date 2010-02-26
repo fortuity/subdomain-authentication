@@ -10,7 +10,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml', :lib => 'haml', :version => '>=2.2.17'
   config.gem 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.12'
   config.gem 'formtastic', :source => 'http://gemcutter.org/', :version => '>= 0.9.7'
-  config.gem 'warden', :source => 'http://gemcutter.org/', :version => '0.9.3'
+  config.gem 'warden', :source => 'http://gemcutter.org/', :version => '0.9.4'
   config.gem 'devise', :source => 'http://gemcutter.org/', :version => '1.0.1'
   config.gem "inherited_resources", :lib => "inherited_resources", :source => "http://gemcutter.org/", :version => '1.0.3'
   config.gem "subdomain_routes", :source => "http://gemcutter.org", :version => '>= 0.3.1'

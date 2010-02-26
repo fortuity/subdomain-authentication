@@ -40,11 +40,13 @@ The application uses the following gems:
 * haml (version 2.2.17)
 * will_paginate (version 2.3.12)
 * formtastic (version 0.9.7)
-* warden (version 0.9.3)
+* warden (version 0.9.4)
 * devise (version 1.0.1)
 * inherited_resources (version 1.0.3)
 * subdomain_routes (version 0.3.1)
 * friendly_id (version 2.2.7)
+
+Note that the devise gem must be version 1.0.1 and the inherited_resources gem must be version 1.0.3. Newer versions of these gems only support Rails 3 and are NOT backward compatible. 
 
 All gems are on gemcutter, so you need to add gemcutter to your sources if you haven’t yet:
 
