@@ -2,9 +2,9 @@
 
 You can use this project as a starting point for any Rails web application that requires subdomains and authentication. User management and authentication is implemented using the  [Devise](http://github.com/plataformatec/devise) gem. The [subdomain_routes](http://github.com/mholling/subdomain_routes/) gem implements subdomains and routing.
 
-## Tutorial
+## "Building It" Tutorial
 
-A complete "walkthrough" tutorial is available on the GitHub wiki:
+A complete walkthrough tutorial is available on the GitHub wiki:
 
 [View the Tutorial](http://wiki.github.com/fortuity/subdomain-authentication/tutorial-walkthrough)
 
@@ -14,11 +14,37 @@ If you simply wish to modify the application for your own project, you can downl
 
 ## Use Cases
 
-1. Administrators can visit the "admin" subdomain and view an administrative home page or list of administrators.
-2. Only an administrator can create a new administrator (no email confirmation is needed).
-3. Any administrator can change or delete another administrator.
-4. Visitors to the main application (without a subdomain) can register as users and create subdomains.
-5. Any visitor can visit a subdomain and see a "site" home page.
+### What Is Implemented
+
+This application implements a particular scenario where subdomains are required. There is a "main" domain where anyone can visit and create a user account. There is an "admin" subdomain for the exclusive use of administrators. And registered users can create any number of subdomains which could host blogs or other types of sites. This approach is familiar to users of sites such as wordpress.com and can be called "blog-style subdomains in Rails" (is there a better name? let me know!).
+
+#### Main Domain ("Promotional Site") Functionality
+
+1. Visitors to the main application (example.com) can sign up (register) as users (email confirmation is needed).
+2. A registered user can visit their "account page" and see their own user name, email address, and a list of subdomains they've created.
+3. A registered user can create any number of subdomains.
+4. Registered users can delete any of their own subdomains.
+5. Registered users can change their own user name, email or password.
+6. Registered users can destroy their own account (including all dependent subdomains).
+
+#### Subdomain ("User Sites") Functionality
+
+1. Any visitor can visit a subdomain (mysite.example.com) and see a "site" home page.
+2. Any visitor can visit any subdomain. Each "site" home page has a link to a list of all other "sites."
+3. The application can be customized by adding functionality and links to the "site" home page.
+
+#### Admin Subdomain Functionality
+
+1. Administrators can visit the "admin" subdomain (admin.example.com) and view an administrative home page.
+2. The administrative home page (admin.example.com) can only be seen by a signed-in administrator.
+3. The administrative home page has a link to a list of administrators.
+4. Only an administrator can create a new administrator (no email confirmation is needed).
+5. Any administrator can change or delete another administrator.
+6. The application can be customized by enabling administrators to delete users or subdomains.
+
+### What Is Not Implemented
+
+Subdomains are commonly used to host a user's account in a scenario often called "Basecamp-style subdomains in Rails". Visitors to the main site can create a user account which is then hosted at a subdomain that matches their user name. Each user has only one subdomain and when they log in, all their activity is confined to their subdomain. A user's home page and account info is accessed only through the subdomain that matches their user name. This approach is NOT implemented in this application (if you build an example of this, let me know and I will add a link here).
 
 ## Dependencies
 
