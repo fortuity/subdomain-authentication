@@ -46,6 +46,10 @@ The application uses the following gems:
 * subdomain_routes (version 0.3.1)
 * friendly_id (version 2.2.7)
 
+All gems are on gemcutter, so you need to add gemcutter to your sources if you haven’t yet:
+
+    $ sudo gem sources -a http://gemcutter.org/
+
 ## Download
 
 The source code is managed with Git (a version control system) and hosted at GitHub. You'll need Git on your machine (install it from [http://git.or.cz/](http://git.or.cz/)).
@@ -128,6 +132,17 @@ You can find documentation for [subdomain_routes](http://github.com/mholling/sub
 The [Devise](http://github.com/plataformatec/devise) community and  [subdomain_routes](http://github.com/mholling/subdomain_routes/) author are your best source for answers to questions about authentication and subdomain implementation. For specific issues with this application, you can submit [bug reports](http://github.com/fortuity/subdomain-authentication/issues) at GitHub. If you want to post complaints (or praise!) about this application, there is a forum for this application at [Get Satisfaction](http://getsatisfaction.com/origin/products/origin_rails_23subdomain_authentication_example_application).
 
 This application is provided without additional documentation or support.
+
+## Contributing
+
+If you make improvements to this application, please share with others.
+
+* Fork the project on GitHub.
+* Make your feature addition or bug fix.
+* Commit with Git.
+* Send the author a pull request.
+
+If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
 
 ## Similar Applications
 
