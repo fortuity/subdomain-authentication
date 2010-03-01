@@ -19,7 +19,6 @@ namespace :sdauth do
       u.password = 'admin123'
       u.password_confirmation = 'admin123'
     end
-		admin.confirm!
     puts 'New admin created!'
 
     subdomain = Subdomain.create! do |s|
