@@ -1,8 +1,8 @@
 haml --version '>= 2.2.17'
 will_paginate --version '>= 2.3.12' --source http://gemcutter.org
 formtastic --version '>= 0.9.7' --source http://gemcutter.org
-warden --version '0.9.4' --source http://gemcutter.org
-devise --version '1.0.1' --source http://gemcutter.org
+warden --version '0.9.5' --source http://gemcutter.org
+devise --version '1.0.3' --source http://gemcutter.org
 inherited_resources --version '1.0.3' --source http://gemcutter.org
 subdomain_routes --version '>= 0.3.1' --source http://gemcutter.org
 friendly_id --version '>= 2.2.7'
