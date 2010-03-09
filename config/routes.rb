@@ -10,12 +10,12 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
 
-  map.subdomain :admin do |admin|
+  map.subdomain :admin, :namespace => nil do |admin|
     admin.root :controller => "AdminHome"
     admin.resources :admins
   end
 
-  map.subdomain :model => :site do |site|
+  map.subdomain :model => :site, :namespace => nil do |site|
     site.root :controller => "sites", :action => "show"
     site.resources :sites, :only => [:index, :show] 
   end
