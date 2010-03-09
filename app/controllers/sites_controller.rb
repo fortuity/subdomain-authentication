@@ -1,6 +1,6 @@
 class SitesController < InheritedResources::Base
   
-  actions :index, :show, :new, :edit, :create, :update, :destroy
+  actions :index, :show
   respond_to :html, :js, :xml, :json
   
   def show
