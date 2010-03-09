@@ -8,7 +8,7 @@ A complete walkthrough tutorial is available on the GitHub wiki:
 
 [View the Tutorial](http://wiki.github.com/fortuity/subdomain-authentication/tutorial-walkthrough)
 
-The tutorial documents each step we followed to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere.
+The tutorial documents each step I followed to create the application. Every step is documented concisely, so a complete beginner can create this application without any additional knowledge. However, no explanation is offered for any of the steps, so if you are a beginner, you’re advised to look for an introduction to Rails elsewhere.
 
 If you simply wish to modify the application for your own project, you can download the application and set it up as described below, without following the tutorial.
 
@@ -141,6 +141,78 @@ To sign in as the pre-configured user, (unless you've changed it) use
 
 You should delete or change the pre-configured logins before you deploy your application.
 
+## Deploying to Heroku
+
+### Set Up Heroku
+
+For your convenience, here are instructions for deploying your app to Heroku. Heroku provides low cost, easily configured Rails application hosting.
+
+To deploy this app to Heroku, you must have a Heroku account. If you need to obtain one, visit [http://heroku.com/](http://heroku.com/) to set up an account. After you set up a Heroku account, install the Heroku gem:
+
+    $ sudo gem install heroku
+
+Add your public key immediately after installing the heroku gem so that you can use git to push or clone Heroku app repositories. See  [http://docs.heroku.com/heroku-command](http://docs.heroku.com/heroku-command) for details.
+
+### Create Your Application on Heroku
+
+Use the Heroku create command to create and name your new app:
+
+    $ heroku create _myapp_
+
+### Heroku Add-ons and DNS Configuration
+
+You will need the following Heroku add-ons to deploy your app using subdomains with your own custom domain:
+
+* Custom Domains (free)
+* Custom Domains + Wildcard ($5 per month)
+* Zerigo DNS Tier 1 ($7 per month)
+
+To enable the add-ons, you can use the Heroku web interface or you can enter the following commands:
+
+    $ heroku addons:add custom_domains
+
+    $ heroku domains:add mydomain.com
+
+    $ heroku addons:add wildcard_domains
+
+    $ heroku domains:add *.mydomain.com
+
+    $ heroku addons:add zerigo_dns:tier1
+
+If you are using the Zerigo DNS service, you will need to set the nameserver with your domain registrar. It can take a few minutes (or longer) for DNS changes to propagate. When DNS is set properly, you should be able to visit *mydomain.com* or *test.mydomain.com* in your web browser and see the Heroku default page:
+
+    Heroku | Welcome to your new app!
+
+You can check that everything has been added correctly by running:
+
+    $ heroku info --app myapp
+
+### Set Up Your Application on Heroku
+
+Push your application to Heroku:
+
+    $ git push heroku master
+
+Set up your Heroku database:
+
+    $ heroku rake db:migrate
+
+Initialize your application database:
+
+    $ heroku rake sdauth:setup
+
+### Visit Your Site
+
+Open your Heroku site in your default web browser:
+
+    $ heroku open
+
+### Troubleshooting
+
+If you get errors, you can troubleshoot by reviewing the log files:
+
+    $ heroku logs
+
 ## Customizing
 
 [Devise](http://github.com/plataformatec/devise) provides a variety of features for implementing authentication. See the Devise documentation for options.
@@ -199,4 +271,3 @@ Daniel Kehoe ([http://danielkehoe.com/](http://danielkehoe.com/)) implemented th
 ### Public Domain Dedication
 
 This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
-
