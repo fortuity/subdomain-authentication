@@ -132,12 +132,12 @@ and go to [http://localhost:3000/](http://localhost:3000/).
 To sign in as the pre-configured administrator, (unless you've changed it) use
 
     email: admin@test.com
-    password: admin123
+    password: please
 
-To sign in as the pre-configured user, (unless you've changed it) use
+To sign in as one of the pre-configured users, (unless you've changed it) use
 
-    email: user@test.com
-    password: user123
+    email: firstuser@test.com
+    password: please
 
 You should delete or change the pre-configured logins before you deploy your application.
 
