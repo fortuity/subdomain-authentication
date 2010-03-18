@@ -25,7 +25,7 @@ class SubdomainsController < InheritedResources::Base
     def find_user
       @user = User.find(params[:user_id])
       unless current_user == @user
-        flash[:alert]  = "You are not allowed to create or change someone else's subdomain."
+        flash[:alert]  = "Are you logged in properly? You are not allowed to create or change someone else's subdomain."
         redirect_to user_path(@user)
       end
     end

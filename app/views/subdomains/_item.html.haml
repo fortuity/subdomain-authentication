@@ -2,4 +2,4 @@
   %td.name= h subdomain.try(:name)
   %td.user_id= link_to subdomain.user.name, user_url(subdomain.user)
   %td.actions
-    = link_to 'Destroy', user_subdomain_url(subdomain.user,subdomain), :confirm => 'Are you sure?', :method => :delete
+    = link_to 'Destroy', subdomain_url(subdomain), :confirm => 'Are you sure?', :method => :delete

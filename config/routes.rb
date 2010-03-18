@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.subdomain nil do |main|
     main.root :controller => "home"
     main.resources :users do |users|
-      users.resources :subdomains, :except => [:edit, :show] 
+      users.resources :subdomains, :except => [:edit, :show], :shallow => true
     end
   end
 
