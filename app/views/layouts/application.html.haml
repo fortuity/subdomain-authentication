@@ -12,7 +12,10 @@
     #container
       #navigation
         - if user_signed_in?
-          = link_to "Home", root_path
+          - if @site
+            = link_to @site.name + " home", site_root_path(@site)
+          - else
+            = link_to "Home", root_path
           |
           = link_to 'My Account', user_path(current_user)
           |
@@ -22,7 +25,10 @@
           |
           = link_to 'Sign out', destroy_admin_session_path
         - if !user_signed_in? && !admin_signed_in?
-          = link_to "Home", root_path
+          - if @site
+            = link_to @site.name + " home", site_root_path(@site)
+          - else
+            = link_to "Home", root_path
           |
           = link_to 'Sign Up', new_registration_path(:user)
           |
