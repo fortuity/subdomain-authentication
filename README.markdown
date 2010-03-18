@@ -251,7 +251,7 @@ Q. When I'm signed in as a user on the main domain, I have to sign in again when
 
 A. Your web browser is setting a cookie (containing the session ID) separately for each domain. To maintain a user login across all domains, you’ll want to configure your session to work across all your subdomains. You can do this in your environment files by setting 
 
-@config.action_controller.session[:session_domain]@
+  config.action_controller.session[:session_domain]
 
 See the details at [http://github.com/mholling/subdomain_routes/](http://github.com/mholling/subdomain_routes/).
 
