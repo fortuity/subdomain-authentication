@@ -2,6 +2,8 @@
 
 You can use this project as a starting point for any Rails web application that requires subdomains and authentication. User management and authentication is implemented using the  [Devise](http://github.com/plataformatec/devise) gem. The [subdomain_routes](http://github.com/mholling/subdomain_routes/) gem implements subdomains and routing.
 
+**UPDATE:** In Rails 3 it's much easier to implement subdomains than in Rails 2 (no plugin required). For a complete example implementation of [Rails 3 subdomains with authentication](http://github.com/fortuity/rails3-subdomain-devise), using Devise, with a detailed tutorial, see: [http://github.com/fortuity/rails3-subdomain-devise](http://github.com/fortuity/rails3-subdomain-devise)
+
 ## "Building It" Tutorial
 
 A complete walkthrough tutorial is available on the GitHub wiki:
@@ -267,6 +269,8 @@ If you make improvements to this application, please share with others.
 If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
 
 ## Similar Applications
+
+For a complete example implementation of [Rails 3 subdomains with authentication](http://github.com/fortuity/rails3-subdomain-devise), using Devise, with a detailed tutorial, see: [http://github.com/fortuity/rails3-subdomain-devise](http://github.com/fortuity/rails3-subdomain-devise)
 
 For a similar application (for Rails 2.3) that uses [Authlogic](http://github.com/binarylogic/authlogic/tree/master) and [Subdomain_fu](http://github.com/mbleigh/subdomain-fu), see [authlogic_subdomain_fu_startup_app](http://github.com/devinterface/authlogic_subdomain_fu_startup_app).
 
